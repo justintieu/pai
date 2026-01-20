@@ -1,0 +1,13 @@
+# MCP Server Configurations
+#
+# Define MCP servers that should be available across AI tools.
+# Each adapter can choose how to integrate these.
+
+servers: {}
+  # Example:
+  # filesystem:
+  #   command: npx
+  #   args:
+  #     - -y
+  #     - "@anthropic/mcp-server-filesystem"
+  #     - /path/to/allowed/directory

@@ -1,0 +1,19 @@
+# PAI Instance Metadata
+# This file tracks information about this PAI installation
+
+# Git repository for syncing across devices (optional)
+# If set, `pai sync` will use git pull/push
+repo: git@github.com:justintieu/pai.git
+
+# Sync method: git | cloud | manual
+sync_method: git
+
+# Owner info (helps AI understand whose PAI this is)
+owner:
+  name: null
+  # Add any other identity hints here
+
+# Notes about this PAI instance
+notes: |
+  Created by `pai init` on initial setup.
+  Edit this file to configure sync settings.

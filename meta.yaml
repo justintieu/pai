@@ -13,6 +13,10 @@ owner:
   name: null
   # Add any other identity hints here
 
+# Maintenance tracking (auto-updated by `pai maintain`)
+last_maintained: 2026-01-20T12:36:08Z
+maintenance_interval_days: 7  # Run maintenance if older than this
+
 # Notes about this PAI instance
 notes: |
   Created by `pai init` on initial setup.

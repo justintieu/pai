@@ -1,0 +1,40 @@
+# OSS Profile
+# Public template for sharing with others
+name: oss
+description: Open source template with placeholders
+
+include:
+  - context/index.md
+  - context/preferences.md
+  - context/strategies.md
+  - memory/index.md
+  - skills/index.md
+  - skills/_template/**/*
+  - workspaces/index.md
+  - workspaces/_template/**/*
+  - agents/index.md
+  - commands/index.md
+  - tools/index.md
+
+exclude:
+  # All personal/work files
+  - "**/*.personal.md"
+  - "**/*.personal.*"
+  - "**/*.work.md"
+  - "**/*.work.*"
+  # Memory (too personal)
+  - memory/learnings.md
+  - memory/work_status.md
+  - memory/decisions.md
+  - memory/narratives.md
+  # Personal context
+  - context/identity.md
+  - context/mission.md
+  - context/beliefs.md
+  - context/goals.md
+  - context/ideas.md
+  - context/challenges.md
+
+transforms: []
+
+output: ./pai-template/

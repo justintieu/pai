@@ -19,5 +19,5 @@ maintenance_interval_days: 7  # Run maintenance if older than this
 
 # Notes about this PAI instance
 notes: |
-  Created by `pai init` on initial setup.
+  Created by `pai setup` on initial setup.
   Edit this file to configure sync settings.

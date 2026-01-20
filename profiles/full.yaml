@@ -1,0 +1,17 @@
+# Full Profile
+# Everything, for your personal machines
+name: full
+description: Complete PAI context, all files included
+
+# Include all files
+include:
+  - "**/*"
+
+# No exclusions
+exclude: []
+
+# No transforms
+transforms: []
+
+# Output to default location (handled by adapter)
+# output: ~/.claude

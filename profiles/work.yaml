@@ -1,0 +1,35 @@
+# Work Profile
+# Work-safe subset for employer machines or shared contexts
+name: work
+description: Work-appropriate context without personal details
+
+include:
+  - context/index.md
+  - context/preferences.md
+  - context/strategies.md
+  - context/models.md
+  - memory/index.md
+  - memory/learnings.md
+  - memory/work_status.md
+  - workspaces/**/*
+  - skills/**/*
+  - agents/**/*
+  - commands/**/*
+  - tools/**/*
+
+exclude:
+  # Personal files
+  - "**/*.personal.md"
+  - "**/*.personal.*"
+  # Private context
+  - context/mission.md
+  - context/beliefs.md
+  - context/goals.md
+  - context/ideas.md
+  - context/challenges.md
+  - memory/narratives.md
+  - memory/decisions.md
+
+transforms: []
+
+output: ./pai-work/

@@ -1,13 +1,29 @@
 # Work Status
 
-## Active Projects
+## Structure
 
-<!-- Current projects and their status -->
+- `index.md` - Active/in-progress items only
+- `yyyy-mm-dd.md` - Daily logs (current month only at top level)
+- `archive/YYYY/` - Previous months' files
 
-## Recent Completions
+**Archive rule**: At month end, move previous month's files to `archive/YYYY/`.
 
-<!-- Recently finished work -->
+---
 
-## Blocked / Waiting
+## Active
 
-<!-- Things waiting on external input -->
+### PAI System
+- [ ] Test `UserPromptSubmit` hook for sync check (changed from `PreToolUse`/`Stop`)
+- [ ] Improve `pai update` to not overwrite user content
+  - Consider `*.core.md` (synced from core) vs `*.user.md` (never overwritten) pattern
+  - `pai update` only touches `*.core.md` files
+  - User files override/extend core files
+
+---
+
+## Recently Completed
+
+- [x] Fix `pai sync --check` hook - added --quiet flag (2026-01-20)
+- [x] Complete ikigai setup (2026-01-20)
+- [x] Created pai-work-status and pai-ikigai skills (2026-01-20)
+- [x] Updated directory structure docs and profiles (2026-01-20)

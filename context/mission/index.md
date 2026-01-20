@@ -2,12 +2,14 @@
 
 ## Core Purpose
 
-<!-- Why you do what you do. What drives you. -->
+Driven by a compulsion to build and solve problems. Strong sense of personal responsibility - feels like "it has to be me." Would rather make something happen than wait for someone else to do it.
 
 ## Impact
 
-<!-- The change you want to make in the world. -->
+Wants to make significant impact through building things that help people - whether that's tools like PAI, apps like the MapleStory companion, or consulting work helping SMBs with AI.
 
 ## Guiding Principles
 
-<!-- The principles that guide your decisions and actions. -->
+- **Agency over waiting** - if you want something done, do it yourself
+- **Build to help** - create things that improve people's lives
+- **Ship and iterate** - action over endless planning

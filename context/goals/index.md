@@ -2,16 +2,20 @@
 
 ## Current Focus
 
-<!-- What you're actively working toward right now. -->
+- **PAI system** - solving context rot, improving personal productivity, eventually helping others
+- **MapleStory companion app** - continuing to build and improve
 
 ## Short-term Goals
 
-<!-- Goals for the next few weeks or months. -->
+- Languages: Vietnamese and Cantonese
+- Career progression at work - becoming a better SWE
 
 ## Long-term Goals
 
-<!-- Goals for the next year or beyond. -->
+- **Tensaku Labs** - grow into consulting company focused on SMB and AI technical debt
+- **AI thought leadership** - study more, build expertise, potentially become a thought leader
+- **Music + AI** - interested but hasn't explored yet
 
 ## Milestones
 
-<!-- Key milestones you're tracking toward. -->
+<!-- Key milestones to track -->

@@ -2,16 +2,19 @@
 
 ## Current Obstacles
 
-<!-- What's blocking your progress right now. -->
+- **Time** - primary constraint across all goals
+- **Focus** - gets split across many projects due to time pressure
+- **Context rot** - losing context when switching between projects; core reason for building PAI
 
 ## Recurring Issues
 
-<!-- Patterns of problems you keep encountering. -->
+- Many goals competing for limited time
+- Context loss when returning to projects after time away
 
 ## Growth Areas
 
-<!-- Skills or areas where you want to improve. -->
+- To be discovered as patterns emerge
 
 ## Open Questions
 
-<!-- Questions you're actively trying to answer. -->
+- To be added as they arise

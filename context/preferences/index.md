@@ -3,17 +3,22 @@
 ## Communication
 
 - Be direct and concise
-- Skip unnecessary pleasantries
+- Skip unnecessary explanation - will ask for details if needed
 - Use technical language when appropriate
 
 ## Code Style
 
-<!-- Your preferred coding conventions -->
+- Prefers OOP over functional
+- Uses Prettier for formatting (config TBD per project)
+- Naming conventions: project-dependent
 
 ## Tools
 
-<!-- Preferred tools, languages, frameworks -->
+- **Editor**: VS Code + terminal
+- **AI**: Claude Code
+- **OS**: Mac (primary), wants mobile access in future
 
 ## Workflow
 
-<!-- How you like to approach tasks -->
+- Action-oriented - prefers trying things over extensive planning
+- Iterative - ship and improve

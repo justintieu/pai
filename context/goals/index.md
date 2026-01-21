@@ -2,9 +2,7 @@
 
 ## Current Focus
 
-- **PAI system** - solving context rot, improving personal productivity, eventually helping others
-  - **Next priority:** Workspaces - project-specific context that switches when you change directories
-  - **Future:** RAG - retrieval augmented generation to surface relevant context from memory/learnings without loading everything
+- **PAI system** - see `workspaces/pai/` for details and current priorities
 - **Mapletools** (mapletools.app) - MapleStory companion app, actively maintained
 
 ## Short-term Goals

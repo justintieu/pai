@@ -13,7 +13,7 @@
 ## Active
 
 ### PAI System
-- [ ] Test `UserPromptSubmit` hook for sync check (changed from `PreToolUse`/`Stop`)
+- [x] Test `UserPromptSubmit` hook for sync check - working in project settings.local.json
 - [ ] Improve `pai update` to not overwrite user content
   - Consider `*.core.md` (synced from core) vs `*.user.md` (never overwritten) pattern
   - `pai update` only touches `*.core.md` files

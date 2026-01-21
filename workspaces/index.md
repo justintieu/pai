@@ -3,8 +3,7 @@
 Active workspaces and their context. Each workspace has its own directory with research, notes, and status.
 
 ## Active
-
-<!-- List active workspaces here:
+- **[pai](pai/workspace.md)** - Personal AI Infrastructure - context, memory, and tools system for Claude
 - **[workspace-name](workspace-name/workspace.md)** - Brief description
   Status: Current phase or focus
 -->

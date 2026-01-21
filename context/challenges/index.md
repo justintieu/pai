@@ -5,6 +5,7 @@
 - **Time** - primary constraint across all goals
 - **Focus** - gets split across many projects due to time pressure
 - **Context rot** - losing context when switching between projects; core reason for building PAI
+- **MDD & Anxiety** - Major Depressive Disorder (recurrent, currently in remission) and anxiety; can affect energy and motivation during episodes
 
 ## Recurring Issues
 

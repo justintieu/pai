@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-21T17:38:15.369Z",
+  "session_id": "f1a93076-6753-4328-b205-45c2b6df3463",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "grep -l \"curl\\|bash\\|grep\\|Task\\|Skill(\" /Users/justintieu/.pai/skills/*/SKILL.md /Users/justintieu/.pai/skills/*/**.md 2>/dev/null | head -20",
+  "reason": "Piping remote script to shell",
+  "action_taken": "Hard block - exit 2"
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-21T17:46:59.745Z",
+  "session_id": "d5bed04e-6c13-4268-95e2-bd3abdf5ac9d",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf ~/.pai/workspaces/test-workspace",
+  "reason": "Recursive deletion of home directory",
+  "action_taken": "Hard block - exit 2"
+}

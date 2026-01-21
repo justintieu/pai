@@ -2,7 +2,7 @@
 
 ## Overview
 
-<!-- What is this workspace? Why does it exist? -->
+<!-- What is this project? Brief description. -->
 
 ## Goals
 
@@ -10,9 +10,7 @@
 
 ## Status
 
-<!-- Current phase, recent progress, next steps -->
-
-**Phase:** Planning | Research | Building | Testing | Launched | On Hold
+**Phase:** Planning
 
 **Last Updated:** YYYY-MM-DD
 
@@ -27,20 +25,51 @@
 
 ## Architecture
 
-<!-- Key technical decisions, patterns, structure -->
+<!-- High-level structure, key patterns, how it works -->
 
 ## Key Files
 
-<!-- Important files to know about -->
+<!-- Important files and what they do -->
 
-## Research
+| File | Purpose |
+|------|---------|
+| | |
 
-<!-- Links, notes, references gathered for this workspace -->
+## Developer Guide
+
+<!-- How to work on this project. Add sections as needed: -->
+<!-- - Adding features -->
+<!-- - Common modifications -->
+<!-- - Testing -->
 
 ## Decisions
 
-<!-- Important decisions made and their rationale -->
+<!-- Important decisions and their rationale -->
+
+## Troubleshooting
+
+<!-- Common issues and solutions -->
+
+| Issue | Solution |
+|-------|----------|
+| | |
 
 ## Notes
 
-<!-- Miscellaneous notes, ideas, thoughts -->
+<!-- Miscellaneous notes, gotchas, things to remember -->
+
+---
+
+<!--
+WORKSPACE GROWTH GUIDE:
+When this file exceeds ~300 lines, split into subdirectories:
+
+workspaces/[name]/
+  workspace.md          # Keep: overview, status, quick refs
+  architecture/         # Detailed architecture docs
+  guides/               # How-to guides
+  reference/            # Troubleshooting, patterns, gotchas
+  research/             # Research notes, links
+
+Keep workspace.md concise - link to detailed docs in subdirs.
+-->

@@ -8,12 +8,12 @@ include:
   - context/preferences.md
   - context/strategies.md
   - memory/index.md
-  - skills/index.md
+  - skills/README.md
   - skills/_template/**/*
   - workspaces/index.md
   - workspaces/_template/**/*
-  - agents/index.md
-  - commands/index.md
+  - agent-defs/README.md
+  - commands/pai.md
   - tools/index.md
 
 exclude:

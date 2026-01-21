@@ -1,6 +1,6 @@
 ---
 name: pai-telos
-description: Life operating system for tracking goals, beliefs, lessons, and wisdom. Helps maintain alignment between values and actions through reflection and updates. USE WHEN track goals, update beliefs, add lessons, reflect on life, check alignment, record wisdom, review progress, life review.
+description: Life operating system for managing goals, beliefs, lessons, and identity. Setup PAI context through guided conversation, track progress, maintain alignment. USE WHEN setup PAI, first time, define goals, articulate identity, track goals, update beliefs, add lessons, reflect on life, check alignment, review progress.
 tools: [Read, Write, Edit, Bash]
 ---
 
@@ -14,22 +14,21 @@ Telos (τέλος) means "purpose" or "end goal" in Greek - the ultimate aim tow
 
 | Workflow | Use When | File |
 |----------|----------|------|
+| **Setup** | First time PAI setup, articulating identity/mission/goals | `workflows/setup.md` |
 | **Update** | Adding/modifying beliefs, goals, lessons, wisdom | `workflows/update.md` |
 | **Review** | Checking progress, identifying blockers | `workflows/review.md` |
 | **Align** | Checking consistency between values and actions | `workflows/align.md` |
 
 ## Context File Mapping
 
-TELOS content maps to our PAI context structure:
-
 | Content | PAI Location |
 |---------|--------------|
-| Beliefs | `~/.pai/context/beliefs/` |
-| Goals | `~/.pai/context/goals/` |
+| Identity | `~/.pai/context/identity/` |
 | Mission | `~/.pai/context/mission/` |
-| Wisdom | `~/.pai/memory/learnings/wisdom.md` |
-| Lessons | `~/.pai/memory/learnings/lessons.md` |
-| Books | `~/.pai/context/ideas/books.md` |
+| Goals | `~/.pai/context/goals/` |
+| Beliefs | `~/.pai/context/beliefs/` |
+| Strategies | `~/.pai/context/strategies/` |
+| Lessons | `~/.pai/memory/learnings/` |
 
 ## Core Principles
 
@@ -132,6 +131,7 @@ Claude: Reads beliefs + mission + goals
 
 ## Resources
 
+- [Setup workflow](workflows/setup.md) - Initial PAI setup through guided conversation
 - [Update workflow](workflows/update.md) - Add/modify with versioning
 - [Review workflow](workflows/review.md) - Progress and adjustments
 - [Align workflow](workflows/align.md) - Values and actions consistency

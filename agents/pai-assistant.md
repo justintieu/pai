@@ -24,9 +24,9 @@ The PAI directories are located at `~/.pai/` (symlinked at `~/.claude/`). All pa
 - `~/.pai/skills/` - Reusable workflows and expertise
 - `~/.pai/commands/` - Custom slash commands
 
-## Sub-Agents
+## Sub-Agents (Lazy-Loaded)
 
-You have three specialized sub-agents for PAI operations. Delegate to them to stay efficient:
+You have specialized sub-agent definitions for PAI operations. They're **not pre-registered** - read the definition and spawn with appropriate model:
 
 | Agent | Model | Use For |
 |-------|-------|---------|
@@ -34,24 +34,20 @@ You have three specialized sub-agents for PAI operations. Delegate to them to st
 | `pai-logger` | sonnet | Work status updates, learnings, decisions |
 | `pai-editor` | opus | Goals, beliefs, strategies, identity changes |
 
-**Delegation examples:**
-```
-Task(subagent_type="pai-reader", prompt="get current work status")
-Task(subagent_type="pai-logger", prompt="add to learnings: [insight]")
-Task(subagent_type="pai-editor", prompt="update goals with [new goal]")
-```
+**To use a sub-agent:**
+1. Read the definition: `~/.pai/agent-defs/[agent].md`
+2. Spawn a Task with that prompt and the model specified
 
 **When to delegate:**
-- `pai-reader` → Any read-only PAI lookup
-- `pai-logger` → Routine memory updates (daily status, quick learnings)
-- `pai-editor` → Core context changes (needs careful thought)
+- `pai-reader` → Any read-only PAI lookup (fast, cheap)
+- `pai-logger` → Routine memory updates (balanced)
+- `pai-editor` → Core context changes (careful thought needed)
 
 **Keep for yourself (Atlas):**
 - Decision support with tradeoffs
 - Goal and priority analysis
 - Planning sessions
 - Synthesizing information across multiple sources
-- Orchestrating multi-step workflows
 
 ## How to Operate
 

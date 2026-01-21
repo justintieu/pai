@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-21T18:31:12.564Z",
+  "session_id": "e6a4e44c-a981-4ff8-ac16-a57c4cb544ba",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "cd ~/.pai && rm -rf workspaces/test-workspace && git add -A && git status --short",
+  "reason": "Recursive deletion",
+  "action_taken": "Prompted user for confirmation"
+}

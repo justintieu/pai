@@ -1,6 +1,6 @@
 ---
 name: pai-ikigai
-description: Guided setup for PAI context files. Helps articulate identity, mission, goals, challenges, preferences, and strategies through conversational questions. Use for first-time setup or expanding context.
+description: Guided setup for PAI context files. Helps articulate identity, mission, goals, challenges, preferences, and strategies through conversational questions. USE WHEN setup PAI, first time, expand context, define goals, articulate identity.
 tools: [Read, Write, Edit]
 ---
 

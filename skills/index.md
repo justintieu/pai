@@ -5,6 +5,8 @@ Reusable PAI skills with workflows and best practices.
 ## Available Skills
 
 - **[pai-ikigai](pai-ikigai/SKILL.md)** - Guided setup for PAI context files (identity, mission, goals, etc.)
+- **[pai-research](pai-research/SKILL.md)** - Multi-source research with parallel agents (Quick/Standard/Extensive modes)
+- **[pai-validate](pai-validate/SKILL.md)** - Validate and create PAI skills following our conventions
 - **[pai-work-status](pai-work-status/SKILL.md)** - Maintain work status tracking, daily logs, and monthly archival
 
 ## Structure

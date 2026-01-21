@@ -1,6 +1,6 @@
 ---
 name: pai-work-status
-description: Maintain work status tracking - daily logs, active items index, and monthly archival. Use when starting/ending sessions, completing tasks, or managing work history.
+description: Maintain work status tracking - daily logs, active items index, and monthly archival. USE WHEN starting session, ending session, completing tasks, work history, daily log, status update.
 tools: [Read, Write, Edit, Bash, Glob]
 ---
 

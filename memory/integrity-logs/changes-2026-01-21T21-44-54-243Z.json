@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-01-21T21:44:54.243Z",
+  "session_id": "088680ed-7ddf-41f6-a758-3f539cb4d8ff",
+  "title": "PAI Hook System Updates",
+  "significance": "major",
+  "change_type": "hook_update",
+  "changes": [
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/workspace.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/codebase-map.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/components.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/business-logic.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/index.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/index.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/auth.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/characters.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/bosses.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/tracker.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/reports.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/server-status.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/hooks/ui.md",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes/index.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes/v3-tracker.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes/v3-public.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes/auth.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "workspaces/mapletools/registries/api-routes/admin.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    }
+  ]
+}

@@ -7,13 +7,15 @@ Personal AI Infrastructure - a system for managing context, memory, and tools th
 ## Goals
 
 - **Solve context rot** - stop losing context when switching between projects or sessions
+- **Increase determinism** - reduce non-deterministic LLM decisions that compound into inconsistency
 - **Improve personal productivity** - reduce friction, automate repetitive work
 - **Eventually help others** - package and share for other Claude users
 
 ### Current Priorities
 
 1. **Workspaces** - project-specific context that switches when you change directories
-2. **RAG** - retrieval augmented generation to surface relevant context without loading everything
+2. **Deterministic rails** - move routing, persistence, and context loading to deterministic mechanisms
+3. **RAG** - retrieval augmented generation to surface relevant context without loading everything
 
 ## Status
 
@@ -33,6 +35,9 @@ Personal AI Infrastructure - a system for managing context, memory, and tools th
 ### Next Steps
 
 - Build workspace auto-switching based on cwd
+- **Determinism**: Add `requires_context` manifest to skills for automatic context loading
+- **Determinism**: Create structured templates for memory writes (learnings, decisions)
+- **Determinism**: Move effort classification to explicit user input (flags or keywords)
 - Implement RAG for context retrieval
 - Add more skills as needed
 
@@ -273,6 +278,62 @@ See [architecture/](architecture/) for detailed docs:
 - Status (phase, progress, next steps, blockers)
 - Quick reference tables
 - Links to detailed docs
+
+## Determinism Strategy
+
+Context rot happens when non-deterministic LLM decisions compound over time. The strategy is: **deterministic rails, flexible execution**.
+
+### Current State Analysis
+
+**Deterministic (~30%)**
+| Component | Mechanism |
+|-----------|-----------|
+| Build system | Shell scripts (`pai build`, `pai sync`) |
+| Hook registration | Static JSON config |
+| File structure | Filesystem operations |
+| Security patterns | Regex matching in hooks |
+
+**Non-Deterministic (~70%)**
+| Component | Problem |
+|-----------|---------|
+| Skill selection | LLM interprets keywords from descriptions |
+| Effort classification | LLM judges TRIVIAL vs THOROUGH |
+| Context loading | LLM decides what to read lazily |
+| Memory writes | LLM decides what's "worth" remembering |
+| Learning extraction | LLM judges salience |
+
+### Target Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│  DETERMINISTIC RAILS                                │
+│  ┌───────────────┐  ┌───────────────┐              │
+│  │ Routing       │  │ Persistence   │              │
+│  │ - Skill match │  │ - Memory fmt  │              │
+│  │ - Context load│  │ - Learning    │              │
+│  │ - Effort level│  │   templates   │              │
+│  └───────────────┘  └───────────────┘              │
+├─────────────────────────────────────────────────────┤
+│  FLEXIBLE EXECUTION                                 │
+│  ┌───────────────────────────────────────────┐     │
+│  │ What happens inside the rails (LLM-driven)│     │
+│  └───────────────────────────────────────────┘     │
+└─────────────────────────────────────────────────────┘
+```
+
+### Mechanisms to Implement
+
+1. **Explicit triggers** - `/research` always invokes pai-research, no keyword guessing
+2. **Manifest-based context** - Skills declare `requires_context: [...]`, loaded automatically
+3. **Structured extraction** - Templates for memory writes, not free-form LLM judgment
+4. **Effort as input** - User specifies "quick" or "thorough", not LLM guessing
+
+### Key Insight
+
+Non-determinism is fine for **output generation** but problematic for **system state changes**. Determinism matters most for:
+- What gets persisted (memory writes)
+- Which skill gets invoked (routing)
+- What context gets loaded
 
 ## Decisions
 

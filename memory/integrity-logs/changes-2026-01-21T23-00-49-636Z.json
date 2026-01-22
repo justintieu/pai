@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-01-21T23:00:49.636Z",
+  "session_id": "5e943c48-afae-4dda-8aa9-fc5573c29673",
+  "title": "pai-agents Skill Files Updated",
+  "significance": "major",
+  "change_type": "skill_update",
+  "changes": [
+    {
+      "tool": "Write",
+      "path": "protocols/subagent-manifest.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "protocols/index.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "skills/pai-agents/workflows/spawn-parallel.md",
+      "category": "skill",
+      "isPhilosophical": false,
+      "isStructural": true
+    }
+  ]
+}

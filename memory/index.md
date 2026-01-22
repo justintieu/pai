@@ -7,6 +7,7 @@ This directory stores learnings, decisions, and current work state.
 ### Current State
 - **[work_status/](work_status/)** - Current projects and their status
 - **[decisions/](decisions/)** - Decision history and pending choices
+- **[ideas.md](ideas.md)** - Feature ideas and backlog for PAI
 
 ### History & Learnings
 - **[learnings/](learnings/)** - Insights, patterns, and lessons learned

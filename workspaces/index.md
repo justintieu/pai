@@ -3,7 +3,7 @@
 Active workspaces and their context. Each workspace has its own directory with research, notes, and status.
 
 ## Active
-- **[pai](pai/workspace.md)** - Personal AI Infrastructure - context, memory, and tools system for Claude
+- **[mapletools](mapletools/workspace.md)** - MapleStory companion application / monorepo (web app, API, Discord, core package)
 
 ## On Hold
 

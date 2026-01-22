@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-22T14:28:42.651Z",
+  "session_id": "d337f250-3242-4b95-b75c-ab5cc8d32efc",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf core/memory/ideas.md core/memory/integrity-logs/ core/memory/security/ core/memory/state/ core/memory/telos-updates.md core/memory/work_status/2026-01-20.md core/workspaces/mapletools/ core/workspaces/pai/",
+  "reason": "Recursive deletion",
+  "action_taken": "Prompted user for confirmation"
+}

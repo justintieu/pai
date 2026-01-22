@@ -154,49 +154,89 @@ for url in URLs; do
 done
 ```
 
-### Step 6: Format Comprehensive Report
+### Step 6: Save Full Report
 
-```markdown
-## Deep Dive: [Topic]
+Save the comprehensive report to file for context efficiency:
 
+```bash
+TOPIC_SLUG=$(echo "[topic]" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+OUTPUT_FILE="$HOME/.pai/output/research/$(date +%Y-%m-%d)-${TOPIC_SLUG}.md"
+
+# Write full report to file
+cat > "$OUTPUT_FILE" << 'EOF'
+# Deep Dive: [Topic]
+
+**Date:** [date]
 **Mode:** Extensive | **Agents:** 6 | **Time:** [X]s
 
-### Executive Summary
+## Executive Summary
 [2-3 paragraph synthesis of key findings]
 
-### Technical Foundation
+## Technical Foundation
 [Core/technical angle findings]
 
-### Historical Context
+## Historical Context
 [Evolution and key milestones]
 
-### Competitive Landscape
+## Competitive Landscape
 [Alternatives and tradeoffs]
 
-### Real-World Applications
+## Real-World Applications
 [Case studies and practical use]
 
-### Limitations & Criticisms
+## Limitations & Criticisms
 [Known issues and challenges]
 
-### Future Outlook
+## Future Outlook
 [Trends and predictions]
 
-### Cross-Cutting Themes
+## Cross-Cutting Themes
 [Patterns that emerged across multiple angles]
 
-### Conflicting Information
+## Conflicting Information
 [Areas where sources disagree - flag for user judgment]
 
-### Sources
+## Sources
 [All verified URLs organized by section]
 
-### Research Metrics
+## Research Metrics
 - Agents: 6
 - Angles explored: [list]
 - High-confidence findings: [count]
 - Areas needing more research: [list]
+EOF
 ```
+
+### Step 7: Return Summary
+
+Return concise summary with file reference:
+
+```markdown
+## Deep Dive: [Topic]
+
+**Mode:** Extensive | **Agents:** 6 | **Saved:** `~/.pai/output/research/[filename]`
+
+### Key Findings
+- [Most important finding 1]
+- [Key finding 2]
+- [Key finding 3]
+- [Key finding 4]
+- [Key finding 5]
+
+### Top Sources
+- [Primary source](url) - Why it's authoritative
+- [Secondary source](url) - Key contribution
+
+### Notable Insights
+[1-2 surprising or non-obvious findings from the research]
+
+### Areas of Uncertainty
+[Key points where sources disagreed]
+
+→ Full report: `~/.pai/output/research/[filename]`
+```
+
+**Context savings:** ~15,000 chars → ~800 chars (95% reduction)
 
 ## Example
 

@@ -23,12 +23,14 @@
  * - Capture handler: Updates WORK/ directory with response
  * - TabState handler: Resets tab title/color to default
  * - SystemIntegrity handler: Detects PAI changes and logs them
+ * - Notification handler: Sends desktop and push notifications
  *
  * HANDLERS (in handlers/):
  * - voice.ts: Extracts 🗣️ line, sends to voice server
  * - capture.ts: Updates current-work.json and WORK/ items
  * - tab-state.ts: Resets Kitty tab to default color
  * - SystemIntegrity.ts: Detects PAI changes, logs them
+ * - notification.ts: Sends desktop/ntfy notifications
  *
  * ERROR HANDLING:
  * - Missing transcript: Exits gracefully
@@ -41,6 +43,7 @@ import { handleVoice } from '../handlers/voice';
 import { handleCapture } from '../handlers/capture';
 import { handleTabState } from '../handlers/tab-state';
 import { handleSystemIntegrity } from '../handlers/SystemIntegrity';
+import { handleNotification } from '../handlers/notification';
 
 interface HookInput {
   session_id: string;
@@ -96,11 +99,12 @@ async function main() {
     handleCapture(parsed, hookInput),
     handleTabState(parsed),
     handleSystemIntegrity(parsed, hookInput),
+    handleNotification(parsed, hookInput.session_id),
   ]);
 
   // Log any failures
   results.forEach((result, index) => {
-    const handlerNames = ['Voice', 'Capture', 'TabState', 'SystemIntegrity'];
+    const handlerNames = ['Voice', 'Capture', 'TabState', 'SystemIntegrity', 'Notification'];
     if (result.status === 'rejected') {
       console.error(`[StopOrchestrator] ${handlerNames[index]} handler failed:`, result.reason);
     }

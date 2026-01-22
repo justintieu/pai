@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-01-22T17:52:17.384Z",
+  "session_id": "03123ac5-4f16-4ae5-911b-5f0332bb15b7",
+  "title": "pai-remind Skill Definition Update",
+  "significance": "major",
+  "change_type": "hook_update",
+  "changes": [
+    {
+      "tool": "Edit",
+      "path": "hooks/src/lib/notifications.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "hooks/src/handlers/notification.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/StopOrchestrator.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "skills/pai-remind/SKILL.md",
+      "category": "skill",
+      "isPhilosophical": false,
+      "isStructural": true
+    },
+    {
+      "tool": "Write",
+      "path": "skills/pai-remind/remind.sh",
+      "category": "skill",
+      "isPhilosophical": false,
+      "isStructural": false
+    }
+  ]
+}

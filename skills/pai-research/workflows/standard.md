@@ -116,33 +116,66 @@ curl -s -o /dev/null -w "%{http_code}" -L "URL"
 
 Remove any URLs that don't return 200.
 
-### Step 6: Format Output
+### Step 6: Save Full Results
+
+Save the complete research to file:
+
+```bash
+TOPIC_SLUG=$(echo "[topic]" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+OUTPUT_FILE="$HOME/.pai/output/research/$(date +%Y-%m-%d)-${TOPIC_SLUG}.md"
+
+cat > "$OUTPUT_FILE" << 'EOF'
+# Research: [Topic]
+
+**Date:** [date]
+**Mode:** Standard | **Agents:** 2 | **Time:** [X]s
+
+## Synthesized Findings
+[Full synthesized answer combining both perspectives]
+
+## Technical Depth (Agent 1)
+[Complete findings from depth-focused agent]
+
+## Practical Context (Agent 2)
+[Complete findings from breadth-focused agent]
+
+## Sources
+- [Source 1](verified-url) - [Description]
+- [Source 2](verified-url) - [Description]
+- [Additional sources...]
+
+## Conflicts/Uncertainties
+[Detailed notes on disagreements between sources]
+
+## Raw Agent Outputs
+[Preserved for reference if needed]
+EOF
+```
+
+### Step 7: Return Summary
+
+Return concise summary with file reference:
 
 ```markdown
 ## Research: [Topic]
 
-**Mode:** Standard | **Agents:** 2 | **Time:** [X]s
+**Mode:** Standard | **Agents:** 2 | **Saved:** `~/.pai/output/research/[filename]`
 
 ### Key Findings
-
-[Synthesized answer combining both perspectives]
-
-**Technical depth:**
-[Insights from Agent 1]
-
-**Practical context:**
-[Insights from Agent 2]
+- [Most important finding]
+- [Second key finding]
+- [Third key finding]
 
 ### Sources
-- [Source 1](verified-url) - [Brief description]
-- [Source 2](verified-url) - [Brief description]
-
-### Conflicts/Uncertainties
-[Note any disagreements between sources, if applicable]
+- [Top source](verified-url) - Brief description
 
 ### Next Steps
 [Suggestions for extensive research if topic warrants deeper investigation]
+
+→ Full details: `~/.pai/output/research/[filename]`
 ```
+
+**Context savings:** ~5,000 chars → ~400 chars (92% reduction)
 
 ## Example
 

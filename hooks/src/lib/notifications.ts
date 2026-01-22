@@ -114,10 +114,30 @@ function expandEnvVars(content: string): string {
 }
 
 /**
- * Load notification config from settings.json
+ * Load notification config from PAI config (~/.pai/config/notifications.json)
  */
 export function getNotificationConfig(): NotificationConfig {
   try {
+    // Primary location: PAI config directory
+    const paiConfigPath = join(homedir(), '.pai', 'config', 'notifications.json');
+
+    if (existsSync(paiConfigPath)) {
+      const rawContent = readFileSync(paiConfigPath, 'utf-8');
+      const expandedContent = expandEnvVars(rawContent);
+      const config = JSON.parse(expandedContent);
+      return {
+        ...DEFAULT_CONFIG,
+        ...config,
+        ntfy: { ...DEFAULT_CONFIG.ntfy, ...config?.ntfy },
+        discord: { ...DEFAULT_CONFIG.discord, ...config?.discord },
+        twilio: { ...DEFAULT_CONFIG.twilio, ...config?.twilio },
+        voice: { ...DEFAULT_CONFIG.voice, ...config?.voice },
+        thresholds: { ...DEFAULT_CONFIG.thresholds, ...config?.thresholds },
+        routing: { ...DEFAULT_CONFIG.routing, ...config?.routing }
+      };
+    }
+
+    // Fallback: Check settings.json for backwards compatibility
     const claudeDir = getClaudeDir();
     const settingsPath = join(claudeDir, 'settings.json');
 

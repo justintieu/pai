@@ -58,24 +58,65 @@ If URL fails:
 3. Verify replacement
 4. Only then include in output
 
-### 4. Deliver Results
+### 4. Save Full Results (Context Saving)
 
-Format output as:
+**For Standard and Extensive modes:** Save full research to file, return summary.
 
+```bash
+# Generate filename
+TOPIC_SLUG=$(echo "[topic]" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+OUTPUT_FILE="$HOME/.pai/output/research/$(date +%Y-%m-%d)-${TOPIC_SLUG}.md"
+
+# Save full results
+cat > "$OUTPUT_FILE" << 'EOF'
+# Research: [Topic]
+**Date:** [date]
+**Mode:** [mode]
+**Agents:** [N]
+
+[Full research content with all sections, sources, and details]
+EOF
+```
+
+**For Quick mode:** Return inline (too short to benefit from file save).
+
+### 5. Deliver Results
+
+**Quick mode** - Return inline:
 ```markdown
 ## Research: [Topic]
 
-**Mode:** [Quick/Standard/Extensive] | **Agents:** [N] | **Time:** [Xs]
+**Mode:** Quick | **Agents:** 1 | **Time:** [Xs]
+
+### Answer
+[Direct answer to the question]
+
+### Source
+- [Title](verified-url)
+```
+
+**Standard/Extensive modes** - Return summary with file reference:
+```markdown
+## Research: [Topic]
+
+**Mode:** [Standard/Extensive] | **Agents:** [N] | **Saved:** `~/.pai/output/research/[filename]`
 
 ### Key Findings
-[Synthesized answer with verified sources]
+- [Finding 1 - most important]
+- [Finding 2]
+- [Finding 3]
 
 ### Sources
-- [Title](verified-url) - Brief description
+- [Top source 1](url) - Brief description
+- [Top source 2](url) - Brief description
 
 ### Next Steps
-[Suggestions for deeper research if applicable]
+[Suggestions if applicable]
+
+→ Full details: `~/.pai/output/research/[filename]`
 ```
+
+**Context savings:** Standard/Extensive reports typically reduce from 5,000-15,000 chars to ~500 chars (90-97% reduction).
 
 ## Examples
 

@@ -1,0 +1,17 @@
+{
+  "ntfy": {
+    "enabled": true,
+    "topic": "pai-f5272bb609247bc6c88bda4ef5e0aa4a",
+    "server": "ntfy.sh"
+  },
+  "routing": {
+    "taskComplete": [],
+    "longTask": [],
+    "backgroundAgent": ["ntfy"],
+    "error": ["desktop", "ntfy"],
+    "security": ["desktop", "ntfy"]
+  },
+  "thresholds": {
+    "longTaskMinutes": 5
+  }
+}

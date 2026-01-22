@@ -8,6 +8,7 @@ Six parallel agents exploring diverse angles for comprehensive coverage.
 - **Queries:** 1 per agent (unique angles)
 - **Target time:** 60-90 seconds
 - **Timeout:** 5 minutes
+- **Protocol:** [Subagent Manifest](/protocols/subagent-manifest.md)
 
 ## Process
 
@@ -33,56 +34,103 @@ Before spawning agents, generate 6 diverse research angles:
 
 **Critical:** All 6 agents in a SINGLE message for true parallel execution.
 
+Each agent returns an inline manifest in its response:
+
 ```typescript
 // Single message with all Task calls
+// Each prompt includes the inline manifest format
+
+const inlineManifest = `
+## Output Format (REQUIRED)
+Start your response with this exact format:
+---
+status: complete | partial | failed
+summary: "One sentence of what you found"
+continuation: "What remains to research" # only if partial
+---
+
+Then provide your findings below the frontmatter.
+`;
+
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] core/technical",
-  prompt: "Search for: [technical deep-dive query]. Return key findings with sources."
+  prompt: `Search for: [technical deep-dive query].
+${inlineManifest}`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] history/evolution",
-  prompt: "Search for: [historical query]. Return key findings with sources."
+  prompt: `Search for: [historical query].
+${inlineManifest}`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] alternatives/comparison",
-  prompt: "Search for: [comparative query]. Return key findings with sources."
+  prompt: `Search for: [comparative query].
+${inlineManifest}`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] real-world applications",
-  prompt: "Search for: [practical applications query]. Return key findings with sources."
+  prompt: `Search for: [practical applications query].
+${inlineManifest}`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] limitations/criticisms",
-  prompt: "Search for: [critical perspective query]. Return key findings with sources."
+  prompt: `Search for: [critical perspective query].
+${inlineManifest}`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "[topic] future/trends",
-  prompt: "Search for: [future trends query]. Return key findings with sources."
+  prompt: `Search for: [future trends query].
+${inlineManifest}`
 })
 ```
 
-### Step 2: Collect Results
+### Step 2: Check Inline Manifests
 
-Wait for all agents (most return within 30-90 seconds).
+Once agents return, parse the YAML frontmatter from each response:
 
-### Step 3: Synthesize Across Angles
+```python
+for response in all_responses:
+    lines = response.split('\n')
+    if lines[0] == '---':
+        # Extract frontmatter
+        end = lines[1:].index('---') + 1
+        manifest = yaml.parse('\n'.join(lines[1:end]))
+
+        if manifest.status == 'partial':
+            spawn_continuation(manifest.continuation)
+        elif manifest.status == 'failed':
+            log_error(manifest)
+```
+
+**Handle status for each:**
+- `complete` → Ready for synthesis
+- `partial` → Spawn continuation agent with `continuation` field
+- `failed` → Note error, proceed with available results
+
+**Important:** Only proceed to synthesis after all agents are complete or continuations exhausted.
+
+### Step 3: Extract Findings
+
+Once all manifests show complete (or continuations handled), extract findings from below the frontmatter in each response.
+
+### Step 4: Synthesize Across Angles
 
 **Theme identification:**
 - What patterns emerge across multiple angles?
@@ -96,7 +144,7 @@ Wait for all agents (most return within 30-90 seconds).
 - Where do sources disagree?
 - What remains uncertain or debated?
 
-### Step 4: Verify All URLs
+### Step 5: Verify All URLs
 
 Every URL must be verified:
 ```bash
@@ -106,7 +154,7 @@ for url in URLs; do
 done
 ```
 
-### Step 5: Format Comprehensive Report
+### Step 6: Format Comprehensive Report
 
 ```markdown
 ## Deep Dive: [Topic]

@@ -8,6 +8,7 @@ Two parallel agents for balanced depth and perspective.
 - **Queries:** 1 per agent (different angles)
 - **Target time:** 15-30 seconds
 - **Timeout:** 60 seconds
+- **Protocol:** [Subagent Manifest](/protocols/subagent-manifest.md)
 
 ## Process
 
@@ -38,7 +39,15 @@ Task({
     - Authoritative/official sources
     - How it works under the hood
 
-    Return findings with source URLs.
+    ## Output Format (REQUIRED)
+    Start your response with this exact format:
+    ---
+    status: complete | partial | failed
+    summary: "One sentence of what you found"
+    continuation: "What remains to research" # only if partial
+    ---
+
+    Then provide your findings below the frontmatter.
   `
 })
 
@@ -54,20 +63,51 @@ Task({
     - Comparisons and alternatives
     - Community opinions and recent developments
 
-    Return findings with source URLs.
+    ## Output Format (REQUIRED)
+    Start your response with this exact format:
+    ---
+    status: complete | partial | failed
+    summary: "One sentence of what you found"
+    continuation: "What remains to research" # only if partial
+    ---
+
+    Then provide your findings below the frontmatter.
   `
 })
 ```
 
-### Step 3: Synthesize Results
+### Step 3: Check Inline Manifests
 
-Once both agents return:
+Once both agents return, parse the YAML frontmatter from each response:
+
+```python
+for response in [depth_response, breadth_response]:
+    lines = response.split('\n')
+    if lines[0] == '---':
+        # Extract frontmatter
+        end = lines[1:].index('---') + 1
+        manifest = yaml.parse('\n'.join(lines[1:end]))
+
+        if manifest.status == 'partial':
+            spawn_continuation(manifest.continuation)
+```
+
+**Handle status:**
+- `complete` → Ready for synthesis
+- `partial` → Spawn continuation agent with `continuation` field as the new task
+- `failed` → Note the error, proceed with available results
+
+**Only proceed to synthesis after all agents are complete or continuations exhausted.**
+
+### Step 4: Synthesize Results
+
+Extract findings from below the frontmatter in each response, then synthesize:
 
 1. **Identify convergence** - Points both agents agree on (high confidence)
 2. **Capture unique insights** - Valuable info from each perspective
 3. **Note conflicts** - Where sources disagree (flag for user)
 
-### Step 4: Verify URLs
+### Step 5: Verify URLs
 
 For each URL from both agents:
 ```bash
@@ -76,7 +116,7 @@ curl -s -o /dev/null -w "%{http_code}" -L "URL"
 
 Remove any URLs that don't return 200.
 
-### Step 5: Format Output
+### Step 6: Format Output
 
 ```markdown
 ## Research: [Topic]

@@ -8,6 +8,7 @@ Launch multiple generic Intern agents simultaneously for parallel processing tas
 - **Model:** haiku (optimal for parallel work)
 - **Target time:** 20-60 seconds
 - **Timeout:** 5 minutes
+- **Protocol:** [Subagent Manifest](/protocols/subagent-manifest.md)
 
 ## Trigger Recognition
 
@@ -48,27 +49,38 @@ Check this URL: [url]
 
 **Critical:** Send all Task calls together for true parallel execution.
 
+Each prompt should include the **manifest protocol** for status tracking:
+
 ```typescript
 // DO THIS - all in one message
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "Intern 1 - [task summary]",
-  prompt: `[Full task context and success criteria]`
+  prompt: `[Full task context and success criteria]
+
+## Manifest Protocol
+Write status to /scratchpad/task-intern-1/manifest.yaml:
+- status: complete | partial | failed
+- summary: "One sentence of what you accomplished"
+- outputs: [list of files you created]
+If incomplete, include: continuation: "What remains to do"
+`
 })
 
 Task({
   subagent_type: "Explore",
   model: "haiku",
   description: "Intern 2 - [task summary]",
-  prompt: `[Full task context and success criteria]`
-})
+  prompt: `[Full task context and success criteria]
 
-Task({
-  subagent_type: "Explore",
-  model: "haiku",
-  description: "Intern 3 - [task summary]",
-  prompt: `[Full task context and success criteria]`
+## Manifest Protocol
+Write status to /scratchpad/task-intern-2/manifest.yaml:
+- status: complete | partial | failed
+- summary: "One sentence of what you accomplished"
+- outputs: [list of files you created]
+If incomplete, include: continuation: "What remains to do"
+`
 })
 // Continue for all tasks
 ```
@@ -80,9 +92,25 @@ const result1 = await Task(...)
 const result2 = await Task(...)
 ```
 
-### Step 4: Collect & Spotcheck Results
+### Step 4: Read Manifests First
 
-After all agents complete:
+After all agents complete, read manifests before loading full results:
+
+```bash
+# Check all manifests
+cat /scratchpad/task-intern-*/manifest.yaml
+```
+
+For each manifest:
+- `complete` → Ready for synthesis
+- `partial` → Spawn continuation subagent with `continuation` field as task
+- `failed` → Log error, decide whether to retry
+
+**Only read full outputs after confirming status.** This keeps your context clean.
+
+### Step 5: Collect & Spotcheck Results
+
+After confirming all tasks complete via manifests:
 
 1. **Aggregate results** into consistent format
 2. **Spotcheck** - Randomly verify 10-20% of results manually

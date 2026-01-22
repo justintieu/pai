@@ -43,9 +43,23 @@ function countFiles(dir: string, extension: string): number {
   }
 }
 
+function countSkillDirs(dir: string): number {
+  try {
+    if (!existsSync(dir)) return 0;
+    const items = readdirSync(dir, { withFileTypes: true });
+    return items.filter(item =>
+      item.isDirectory() &&
+      !item.name.startsWith('_') &&
+      !item.name.startsWith('.')
+    ).length;
+  } catch {
+    return 0;
+  }
+}
+
 function getStats(): { skills: number; hooks: number; contexts: number } {
   return {
-    skills: countFiles(join(paiDir, 'skills'), '.md'),
+    skills: countSkillDirs(join(paiDir, 'skills')),
     hooks: countFiles(join(paiDir, 'hooks', 'src', 'hooks'), '.ts'),
     contexts: countFiles(join(paiDir, 'context'), '.md'),
   };

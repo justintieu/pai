@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-22T19:23:35.364Z",
+  "session_id": "f5c19fb1-a91f-454f-a726-f68a1f92fa07",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "echo \"=== Test 1: pai-* files get updated ===\" && ./pai update --dry-run 2>&1 | grep -E \"Would update.*pai-\" | head -5\n\necho \"\" && echo \"=== Test 2: Check if non pai-* files would be skipped ===\" && ./pai update --dry-run 2>&1 | grep -E \"skip|Skip\" | head -3\n\necho \"\" && echo \"=== Test 3: Create a test user file and verify it's not touched ===\" && mkdir -p ~/.pai/skills/my-test-skill && echo \"user content\" > ~/.pai/skills/my-test-skill/SKILL.md && ./pai update --dry-run 2>&1 | grep -E \"my-test\" |",
+  "reason": "Recursive deletion of home directory",
+  "action_taken": "Hard block - exit 2"
+}

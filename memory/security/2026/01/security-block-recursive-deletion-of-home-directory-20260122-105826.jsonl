@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-22T18:58:26.524Z",
+  "session_id": "f5c19fb1-a91f-454f-a726-f68a1f92fa07",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf ~/.pai/skills/pai-codebase",
+  "reason": "Recursive deletion of home directory",
+  "action_taken": "Hard block - exit 2"
+}

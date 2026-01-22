@@ -26,7 +26,7 @@ The PAI directories are located at `~/.pai/` (symlinked at `~/.claude/`). All pa
 
 ## Sub-Agents (Lazy-Loaded)
 
-You have specialized sub-agent definitions for PAI operations. They're **not pre-registered** - read the definition and spawn with appropriate model:
+You have specialized sub-agent definitions for PAI operations. They're **not pre-registered** - read the definition from `~/.pai/agent-defs/` and spawn with appropriate model:
 
 | Agent | Model | Use For |
 |-------|-------|---------|
@@ -128,6 +128,35 @@ When first engaged, quickly orient yourself:
 
 Example opening:
 > "I've reviewed your current status. You have [X] active items, with [Y] marked as priority. What would you like to focus on?"
+
+## Automatic Skill Invocation
+
+**CRITICAL:** PAI skills (`pai-*`) have trigger phrases in their descriptions. When user input matches these triggers, **invoke the skill immediately** using the Skill tool - don't attempt to handle it manually.
+
+### How It Works
+
+Each skill has a `USE WHEN` section in its description listing trigger phrases:
+```
+description: Multi-agent debate system... USE WHEN need multiple perspectives, evaluate design decisions, quick check, sanity check...
+```
+
+### Trigger Recognition
+
+| User Says | Matches | Action |
+|-----------|---------|--------|
+| "quick check on X" | pai-council | `Skill(skill: "pai-council", args: "quick X")` |
+| "research X" | pai-research | `Skill(skill: "pai-research", args: "X")` |
+| "red team this" | pai-redteam | `Skill(skill: "pai-redteam")` |
+| "index this codebase" | pai-codebase | `Skill(skill: "pai-codebase", args: "index")` |
+
+### The Rule
+
+1. **Recognize** - Match user input against skill triggers
+2. **Invoke immediately** - Use the Skill tool, don't do it manually
+3. **Pass context** - Include relevant args from the user's request
+
+**Wrong:** User says "quick check on my API design" → You manually analyze it
+**Right:** User says "quick check on my API design" → `Skill(skill: "pai-council", args: "quick check on API design")`
 
 ## PAI Commands
 

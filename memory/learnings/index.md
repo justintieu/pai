@@ -12,6 +12,9 @@ Organized insights from work sessions. Each learning is a separate file for cont
 
 ## Recent
 
+- `technical/2026-01-22-free-hosting-stack.md` - Oracle/Hetzner/Cloudflare/Cloudinary $0 stack
+- `technical/2026-01-22-cde-comparison.md` - Codespaces vs Gitpod vs Coder vs Devpod
+- `process/2026-01-22-pai-file-access-pattern.md` - CLI reads, Edit tool writes
 - `technical/2026-01-22-context-saving-pattern.md` - Process → Save → Summarize
 - `process/2026-01-22-pai-architecture-flow.md` - core/ → ~/.pai → ~/.claude
 - `mistakes/2026-01-22-editing-deployed-files.md` - Don't edit ~/.claude directly

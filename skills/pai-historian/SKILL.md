@@ -8,7 +8,7 @@ tools: Read, Write, Bash
 
 Context archivist that analyzes conversations, extracts key information, and archives it to preserve context while keeping the main chat clean.
 
-Based on the "Historian Agent" pattern from context-efficient AI workflows.
+Based on the "Historian Agent" pattern for context-efficient AI workflows.
 
 ## Philosophy
 

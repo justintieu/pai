@@ -12,6 +12,10 @@ Organized insights from work sessions. Each learning is a separate file for cont
 
 ## Recent
 
+- `technical/2026-01-22-voice-sip-stack.md` - voip.ms + Asterisk + Whisper + Piper
+- `technical/2026-01-22-ai-services-abstraction.md` - Vendor abstraction pattern
+- `technical/2026-01-22-home-assistant-ai-integration.md` - HA + AI backend pattern
+- `technical/2026-01-22-scoped-sync-architecture.md` - Profile hierarchy for multi-device
 - `technical/2026-01-22-free-hosting-stack.md` - Oracle/Hetzner/Cloudflare/Cloudinary $0 stack
 - `technical/2026-01-22-cde-comparison.md` - Codespaces vs Gitpod vs Coder vs Devpod
 - `process/2026-01-22-pai-file-access-pattern.md` - CLI reads, Edit tool writes

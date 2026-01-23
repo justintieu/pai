@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-23T00:06:16.699Z",
+  "session_id": "4397ac4c-ec9d-45f6-807a-d9678a893cd4",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf ~/.pai/workspaces/pai-product && echo \"Deleted pai-product workspace\"",
+  "reason": "Recursive deletion of home directory",
+  "action_taken": "Hard block - exit 2"
+}

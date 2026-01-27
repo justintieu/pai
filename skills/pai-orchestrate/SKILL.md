@@ -7,16 +7,20 @@ model: opus
 
 # PAI Orchestrate
 
-Meta-orchestrator that decomposes complex tasks into trees of skills and agents, executes them with maximum parallelism (BFS spawning), and synthesizes results bottom-up.
+Meta-orchestrator that decomposes complex tasks into trees of skills and agents, executes them with wave-based parallelism, and synthesizes results bottom-up.
+
+Uses GSD-inspired phases: **discuss → plan → execute → verify**
 
 ## Core Principle
 
 **You never do the work directly.** You:
-1. Understand the goal
-2. Plan the decomposition
-3. Spawn the tree
-4. Wait for completion
-5. Present final synthesis to user
+1. **Discuss** - Clarify requirements (optional)
+2. **Understand** - Index codebase, research (optional)
+3. **Plan** - Decompose into XML task specs with dependencies
+4. **Execute** - Run tasks in waves (parallel within wave, sequential across waves)
+5. **Verify** - Validate via council/redteam (optional)
+6. **Synthesize** - Combine results bottom-up
+7. **Return** - Present final synthesis to user
 
 ## Workflows
 
@@ -27,28 +31,31 @@ Meta-orchestrator that decomposes complex tasks into trees of skills and agents,
 
 ## Quick Reference
 
-### Tree Structure
+### Execution Flow
 
 ```
 User Request
     │
-    └─► Root Agent (you spawn this)
-            │
-            ├─► Understand Phase (optional)
-            │       ├─► pai-codebase
-            │       └─► pai-research
-            │
-            ├─► Area Agents (parallel)
-            │       ├─► Directory Agents (parallel)
-            │       │       ├─► File Agents (leaves)
-            │       │       └─► Synthesize directory
-            │       └─► Synthesize area
-            │
-            ├─► Validate Phase (optional)
-            │       ├─► pai-council
-            │       └─► pai-redteam
-            │
-            └─► Final Synthesis → User sees this
+    ├─► DISCUSS (optional) ───────► context.md
+    │       └─► AskUserQuestion to clarify
+    │
+    ├─► UNDERSTAND (optional) ────► understand/
+    │       ├─► pai-codebase
+    │       └─► pai-research
+    │
+    ├─► PLAN ─────────────────────► plan.md (XML task specs)
+    │       └─► Decompose into tasks with dependencies
+    │
+    ├─► EXECUTE ──────────────────► tasks/
+    │       ├─► Wave 1: [task-01, task-02] (parallel)
+    │       ├─► Wave 2: [task-03] (depends on wave 1)
+    │       └─► Wave 3: [task-04, task-05] (parallel)
+    │
+    ├─► VERIFY (optional) ────────► validate/
+    │       ├─► pai-council
+    │       └─► pai-redteam
+    │
+    └─► SYNTHESIZE ───────────────► final.md → User sees this
 ```
 
 ### Available Skills Catalog
@@ -120,18 +127,25 @@ Use these skills in your tree when appropriate. Organized by phase of typical ex
 ```
 /scratchpad/
   orchestrate-{task-slug}/
-    plan.md                 # Decomposition plan
+    context.md              # DISCUSS phase output (clarifications)
+    plan.md                 # PLAN phase output (XML task specs)
     manifest.yaml           # Overall status
-    understand/             # Phase 1 outputs
-    areas/
+    understand/             # UNDERSTAND phase outputs
+      codebase.md
+      research.md
+    tasks/                  # EXECUTE phase outputs (one per task)
+      task-01.md
+      task-02.md
+      ...
+    areas/                  # Aggregated by area (post-execute)
       api/
-        manifest.yaml
         synthesized.md
-        ...
       ui/
-        ...
-    validate/               # Phase 4 outputs
-    final.md                # Final synthesis (user sees this)
+        synthesized.md
+    validate/               # VERIFY phase outputs
+      council.md
+      redteam.md
+    final.md                # SYNTHESIZE phase output (user sees this)
 ```
 
 ## Task-Def Routing
@@ -254,6 +268,7 @@ Orchestrator:
 
 ## Resources
 
-- [Execute workflow](workflows/execute.md) - Full orchestration process
+- [Execute workflow](workflows/execute.md) - Full orchestration process (discuss → plan → execute → verify)
 - [Plan workflow](workflows/plan.md) - Show decomposition without executing
+- [XML Task Spec Format](reference/task-spec-format.md) - Machine-parseable task format
 - [Tree Protocol](../../protocols/tree-orchestration.md) - Technical spec

@@ -10,7 +10,54 @@ Full orchestration: decompose, spawn, execute, synthesize.
 
 ## Phases
 
-### Phase 1: Understand (Optional)
+### Phase 1: DISCUSS (Optional)
+
+Skip if requirements are already clear and unambiguous.
+
+**When to include:**
+- User request is vague or open-ended
+- Multiple valid interpretations exist
+- Need to capture preferences or constraints
+- First time working with this user on this topic
+
+**Steps:**
+1. Identify ambiguities or missing information in the request
+2. Use AskUserQuestion to clarify requirements
+3. Capture decisions and constraints
+4. Write CONTEXT.md with clarified requirements
+
+**Output:** `/scratchpad/orchestrate-{slug}/context.md`
+
+```markdown
+# Context: [Task Name]
+
+## Original Request
+[User's original request]
+
+## Clarifications
+- Q: [question asked]
+  A: [user's answer]
+- Q: [question asked]
+  A: [user's answer]
+
+## Decisions Made
+- [Decision 1]: [rationale]
+- [Decision 2]: [rationale]
+
+## Constraints
+- [Constraint 1]
+- [Constraint 2]
+
+## Out of Scope
+- [What we explicitly won't do]
+```
+
+**Why optional:**
+- If user provides detailed spec, skip directly to Plan
+- If task is clear from context, skip
+- Only run when clarification would save wasted effort
+
+### Phase 2: Understand (Optional)
 
 Skip if you're already familiar with the codebase/domain.
 
@@ -36,7 +83,7 @@ Task(
 )
 ```
 
-### Phase 2: Plan
+### Phase 3: Plan
 
 Decompose the task into a tree structure.
 
@@ -83,44 +130,75 @@ Decompose the task into a tree structure.
 - pai-council: Review after implementation
 ```
 
-### Phase 3: Execute
+### Phase 4: Execute
 
-Spawn the tree with BFS (all siblings in parallel).
+Execute tasks in waves - each wave runs in parallel, waves run sequentially.
 
-**For each area, spawn an area agent:**
+**Wave Execution:**
+1. Parse plan.md for `<task>` elements
+2. Build dependency graph from `<depends>` tags
+3. Calculate waves (tasks with no dependencies = wave 1)
+4. For each wave in order:
+   a. Spawn all tasks in wave in parallel (single message with multiple Tasks)
+   b. Wait for all to complete
+   c. Verify manifests created
+   d. Proceed to next wave only if all passed
+
+**Wave Structure Example:**
+| Wave | Tasks | Dependencies |
+|------|-------|--------------|
+| 1 | task-01, task-02 | None (foundation) |
+| 2 | task-03 | Depends on task-01 |
+| 3 | task-04, task-05 | Depends on task-03 |
+
+**For each task in wave, spawn executor:**
 ```
 Task(
-  prompt: "You are the [AREA] area agent for: [TASK]
+  prompt: "Execute this task from the orchestration plan:
 
-  ## Your Scope
-  [List of directories/files in this area]
+  ## Task
+  [task XML from plan]
+
+  ## Context
+  - Orchestration: [task name]
+  - Wave: [wave number]
+  - Dependencies completed: [list]
 
   ## Instructions
-  1. For each directory in your scope, spawn a directory agent
-  2. Directory agents spawn file agents for each file
-  3. File agents do the actual work (1 file = 1 agent)
-  4. Collect summaries from children
-  5. Write synthesized.md combining all changes in your area
-  6. Write manifest.yaml with status
+  1. Read affected files
+  2. Implement the action steps
+  3. Verify using the <verify> criteria
+  4. Write summary to /scratchpad/orchestrate-{slug}/tasks/[task-id].md
 
-  ## Output Location
-  /scratchpad/orchestrate-{slug}/areas/[area]/
-
-  ## Manifest Protocol
-  When done, write manifest.yaml:
+  ## Output Format
   ```yaml
-  status: complete
-  summary: 'One sentence of what was accomplished in this area'
-  outputs:
-    - synthesized.md
+  status: complete | failed
+  summary: 'What was accomplished'
+  files_changed:
+    - path/to/file.ts
+  verification: 'How it was verified'
   ```",
-  subagent_type: "general-purpose"
+  subagent_type: "general-purpose",
+  model: "sonnet"
 )
 ```
 
-**Spawn all area agents in parallel** using multiple Task calls in one message.
+**Spawn all tasks in a wave in a SINGLE message** for true parallelism.
 
-### Phase 4: Validate (Optional)
+**Error Handling:**
+- If any task in a wave fails:
+  1. Mark task as failed in manifest
+  2. Check if dependent tasks can proceed
+  3. If critical path blocked, stop and report
+  4. If non-critical, continue with remaining tasks
+
+**Area Aggregation:**
+After all waves complete, aggregate by area:
+- Group task outputs by area (API, UI, DB, etc.)
+- Write `/scratchpad/orchestrate-{slug}/areas/[area]/synthesized.md`
+- Each area synthesis combines all task outputs for that area
+
+### Phase 5: Validate (Optional)
 
 After all areas complete, optionally run validation.
 
@@ -148,7 +226,7 @@ Task(
 )
 ```
 
-### Phase 5: Synthesize
+### Phase 6: Synthesize
 
 Combine all area syntheses into final deliverable.
 
@@ -191,7 +269,7 @@ Combine all area syntheses into final deliverable.
 [Any follow-up actions needed]
 ```
 
-### Phase 6: Return
+### Phase 7: Return
 
 Return summary to Atlas (main agent):
 
@@ -214,54 +292,27 @@ Return summary to Atlas (main agent):
 - [x] Tests: [summary]
 ```
 
-## Leaf Agent Template
+## Task Output Format
 
-For the deepest level (file agents):
+Each task executor writes to `/scratchpad/orchestrate-{slug}/tasks/[task-id].md`:
 
+```yaml
+status: complete | failed
+summary: 'What was accomplished'
+files_changed:
+  - path/to/file.ts
+verification: 'How it was verified'
 ```
-Task(
-  prompt: "You are a file agent for: [FILE_PATH]
-
-  ## Task
-  [Specific change needed for this file]
-
-  ## Context
-  - Parent task: [overall goal]
-  - Area: [which area]
-  - Related files: [siblings if relevant]
-
-  ## Instructions
-  1. Read the file
-  2. Make the required changes
-  3. Write summary to /scratchpad/orchestrate-{slug}/areas/[area]/[dir]/[filename].md
-
-  ## Output Format
-  Your summary should include:
-  - What was changed
-  - Why
-  - Any concerns or notes
-
-  You are a LEAF - do not spawn children.",
-  subagent_type: "general-purpose",
-  model: "sonnet"
-)
-```
-
-## Error Handling
-
-If an agent fails:
-1. Mark in manifest: `status: failed`, `error: "message"`
-2. Continue with siblings (don't block the whole tree)
-3. Surface failures in final synthesis
-4. Let user decide to retry or accept partial
 
 ## Checklist
 
 - [ ] Created scratchpad directory
+- [ ] Ran discuss phase (if needed)
 - [ ] Ran understand phase (if needed)
-- [ ] Wrote plan.md
-- [ ] Spawned all area agents in parallel
-- [ ] Waited for all areas to complete
+- [ ] Wrote plan.md with XML task specs
+- [ ] Calculated wave execution order
+- [ ] Executed each wave (parallel tasks, sequential waves)
+- [ ] Aggregated task outputs by area
 - [ ] Ran validation (if needed)
 - [ ] Wrote final.md
 - [ ] Returned summary to Atlas

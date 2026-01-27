@@ -7,6 +7,7 @@ Cross-cutting behavioral patterns that apply across agents and skills.
 | Protocol | Purpose |
 |----------|---------|
 | [Subagent Manifest](subagent-manifest.md) | Lightweight status reporting for context-aware orchestration |
+| [Tree Orchestration](tree-orchestration.md) | Recursive agent decomposition for context-efficient task execution |
 
 ## When to Use Protocols
 

@@ -19,6 +19,18 @@ Images → Cloudinary (optimization)
 - **Prevention:** Keep-alive cron job for low-activity periods
 - **Good for:** Always-on services, Docker workloads, web hosting
 
+## Other Free VPS Options (Why Oracle Wins)
+
+| Provider | Free Tier | Catches |
+|----------|-----------|---------|
+| Google Cloud | e2-micro (0.25 vCPU, 1GB) | Very limited specs |
+| AWS | t2.micro (1 vCPU, 1GB) | 12 months only |
+| Azure | B1s (1 vCPU, 1GB) | 12 months only |
+| Fly.io | 3 shared VMs, 256MB each | Burns through quickly |
+| Railway | $5 credit/mo | Not enough for always-on |
+
+**Oracle wins because:** 4 ARM cores + 24GB RAM + forever free. Nothing else comes close.
+
 ## Hetzner (Paid Alternative)
 
 - CAX11: €4/mo (2 cores, 4GB) - tight for multi-project

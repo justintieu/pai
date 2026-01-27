@@ -15,9 +15,10 @@ Record a learning, insight, or pattern discovered during this session.
 
 **Workflow:**
 1. Capture the insight from the user or infer from conversation
-2. Categorize it (technical, process, mistake-to-avoid)
-3. Append to `~/.pai/memory/learnings.md` under appropriate section
-4. Confirm what was added
+2. Categorize it (technical, process, mistake)
+3. Create file at `~/.pai/memory/learnings/{category}/YYYY-MM-DD-brief-description.md`
+4. Update `~/.pai/memory/learnings/index.md` Recent section
+5. Confirm what was added
 
 **Example:**
 ```
@@ -55,8 +56,8 @@ Add a quick note to work status or memory.
 
 **Workflow:**
 1. Capture the note
-2. Determine best location (work_status.md for tasks, learnings.md for insights)
-3. Append with timestamp
+2. Determine best location (work_status.md for tasks, learnings/ for insights)
+3. Append with timestamp (or create file for learnings)
 4. Confirm
 
 **Example:**

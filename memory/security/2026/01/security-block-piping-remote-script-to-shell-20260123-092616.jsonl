@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-23T17:26:16.190Z",
+  "session_id": "77760020-ec9e-49b5-89eb-5eed0d886209",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "grep -r \"curl\\|HTTP\\|API\\|fetch\\|request\" /Users/justintieu/Documents/github/kasanariba-ai/lib --include=\"*.sh\" | head -20",
+  "reason": "Piping remote script to shell",
+  "action_taken": "Hard block - exit 2"
+}

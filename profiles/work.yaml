@@ -5,15 +5,16 @@ description: Work-appropriate context without personal details
 
 include:
   - context/index.md
-  - context/preferences.md
-  - context/strategies.md
-  - context/models.md
+  - context/preferences/**/*
+  - context/strategies/**/*
+  - context/models/**/*
   - memory/index.md
-  - memory/learnings.md
-  - memory/work_status.md
+  - memory/learnings/**/*
+  - memory/work_status/**/*
   - workspaces/**/*
   - skills/**/*
-  - agent-defs/**/*
+  - agents/**/*
+  - task-defs/**/*
   - commands/**/*
   - tools/**/*
 
@@ -22,13 +23,14 @@ exclude:
   - "**/*.personal.md"
   - "**/*.personal.*"
   # Private context
-  - context/mission.md
-  - context/beliefs.md
-  - context/goals.md
-  - context/ideas.md
-  - context/challenges.md
-  - memory/narratives.md
-  - memory/decisions.md
+  - context/identity/**/*
+  - context/mission/**/*
+  - context/beliefs/**/*
+  - context/goals/**/*
+  - context/ideas/**/*
+  - context/challenges/**/*
+  - memory/narratives/**/*
+  - memory/decisions/**/*
 
 transforms: []
 

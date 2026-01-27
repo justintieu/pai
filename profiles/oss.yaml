@@ -5,14 +5,14 @@ description: Open source template with placeholders
 
 include:
   - context/index.md
-  - context/preferences.md
-  - context/strategies.md
+  - context/preferences/**/*
+  - context/strategies/**/*
   - memory/index.md
   - skills/README.md
   - skills/_template/**/*
   - workspaces/index.md
   - workspaces/_template/**/*
-  - agent-defs/README.md
+  - task-defs/README.md
   - commands/pai.md
   - tools/index.md
 
@@ -23,17 +23,17 @@ exclude:
   - "**/*.work.md"
   - "**/*.work.*"
   # Memory (too personal)
-  - memory/learnings.md
-  - memory/work_status.md
-  - memory/decisions.md
-  - memory/narratives.md
+  - memory/learnings/**/*
+  - memory/work_status/**/*
+  - memory/decisions/**/*
+  - memory/narratives/**/*
   # Personal context
-  - context/identity.md
-  - context/mission.md
-  - context/beliefs.md
-  - context/goals.md
-  - context/ideas.md
-  - context/challenges.md
+  - context/identity/**/*
+  - context/mission/**/*
+  - context/beliefs/**/*
+  - context/goals/**/*
+  - context/ideas/**/*
+  - context/challenges/**/*
 
 transforms: []
 

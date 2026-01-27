@@ -12,11 +12,6 @@ Agent definitions are **lazy-loaded**: Claude reads the definition file when nee
 
 ## Available Agents
 
-### pai-assistant (Atlas)
-Personal life OS assistant. Helps with planning, goal tracking, decision support, and navigating PAI context.
-- **Model:** opus
-- **File:** `pai-assistant.md`
-
 ### PAI Sub-Agents
 
 | Agent | Model | Purpose |

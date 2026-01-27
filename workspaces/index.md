@@ -1,31 +1,35 @@
 # Workspaces
 
-Active workspaces and their context. Each workspace has its own directory with research, notes, and status.
+Project-specific context. Each project gets its own folder with a `workspace.md` entry point.
 
 ## Active
-- **[pai](pai/workspace.md)** - PAI Life OS: mobile, voice, IoT, autonomous agent
-- **[mapletools](mapletools/workspace.md)** - MapleStory companion application / monorepo (web app, API, Discord, core package)
+
+<!-- - **[project-name](project-name/workspace.md)** - Brief description -->
 
 ## On Hold
 
-<!-- Workspaces paused but not abandoned -->
+<!-- Projects paused but not abandoned -->
 
 ## Completed
 
-<!-- Finished workspaces for reference -->
+<!-- Finished projects for reference -->
 
-## When to Load
+## Structure
 
-- Starting work on a workspace → load its `workspace.md`
-- Need research context → load workspace's `research/` files
-- Cross-workspace decisions → load multiple `workspace.md` files
-- Resuming after break → check workspace's status section
-
-## Creating a New Workspace
-
-```bash
-mkdir -p ~/.pai/workspaces/my-workspace
-cp ~/.pai/workspaces/_template/workspace.md ~/.pai/workspaces/my-workspace/
+```
+workspaces/
+  project-name/
+    workspace.md     # Entry point - goals, status, context
+    ...              # Whatever the project needs
 ```
 
-Then edit `workspace.md` and add to the Active section above.
+Projects organize their own subfolders as needed (research/, notes/, etc.).
+
+## Creating a Workspace
+
+```bash
+mkdir ~/.pai/workspaces/my-project
+cp ~/.pai/workspaces/_template/workspace.md ~/.pai/workspaces/my-project/
+```
+
+Then add to Active section above.

@@ -2,17 +2,12 @@
 
 ## Problem Solving
 
-- Adaptive approach - no rigid process
-- Reaches for whatever tool fits the moment
-- Bias toward experimentation over planning
-- Will try multiple approaches: experimenting with code, stepping away to think, searching for similar solutions, breaking into smaller pieces
+<!-- Your approach to breaking down and solving problems -->
 
 ## Decision Making
 
-- To be documented as patterns emerge
+<!-- Frameworks you use for making decisions -->
 
 ## Learning
 
-1. **Docs first** - start with official documentation
-2. **Hands-on** - if docs are confusing, switch to tutorials, trial/error, or diving into code
-3. **Ask someone** - last resort, prefers self-directed learning
+<!-- How you prefer to learn new things -->

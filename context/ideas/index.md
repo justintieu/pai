@@ -6,7 +6,7 @@
 
 ## Backburner
 
-- **Personal CRM** - A relationship management tool for personal connections. Track who you know, when you last connected, what matters to them, follow-ups. Could be part of PAI or standalone.
+<!-- Ideas you want to return to later. -->
 
 ## Experiments
 

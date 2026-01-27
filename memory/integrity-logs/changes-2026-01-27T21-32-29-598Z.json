@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-01-27T21:32:29.598Z",
+  "session_id": "56e13abe-199a-49c1-80e0-11384fba2083",
+  "title": "PAI Memory-system Updates Applied",
+  "significance": "minor",
+  "change_type": "skill_update",
+  "changes": [
+    {
+      "tool": "Write",
+      "path": "memory/learnings/technical/2026-01-27-docker-traefik-api-url.md",
+      "category": "memory-system",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "memory/learnings/index.md",
+      "category": "memory-system",
+      "isPhilosophical": false,
+      "isStructural": false
+    }
+  ]
+}

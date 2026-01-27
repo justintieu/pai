@@ -51,7 +51,8 @@ docs/         # Development protocols
 - Party size applied when loading boss presets
 
 ### Next Steps
-- None currently
+- Set up Cloudinary for image hosting/optimization
+- Add Cloudflare Worker proxy for `images.mapletools.com` subdomain
 
 ### Blockers
 - None currently
@@ -156,6 +157,7 @@ Must use `/satori-validator` skill - see `docs/protocols/discord-image-generatio
 | PWA | Offline support critical for mobile users |
 | Monorepo | Share types/services between web, api, discord |
 | next-intl | Future multi-language support (currently EN only) |
+| Cloudinary + Cloudflare proxy | Free image CDN with custom subdomain (images.mapletools.com) |
 
 ## Environment Variables
 

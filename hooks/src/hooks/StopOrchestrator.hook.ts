@@ -24,6 +24,8 @@
  * - TabState handler: Resets tab title/color to default
  * - SystemIntegrity handler: Detects PAI changes and logs them
  * - Notification handler: Sends desktop and push notifications
+ * - LearningCapture handler: Captures learnings on topic completion
+ * - DecisionLog handler: Extracts decisions from responses, persists to log
  *
  * HANDLERS (in handlers/):
  * - voice.ts: Extracts 🗣️ line, sends to voice server
@@ -31,6 +33,8 @@
  * - tab-state.ts: Resets Kitty tab to default color
  * - SystemIntegrity.ts: Detects PAI changes, logs them
  * - notification.ts: Sends desktop/ntfy notifications
+ * - learning-capture.ts: Topic-aware learning capture (replaces SessionEnd)
+ * - decision-log.ts: Pattern-based decision extraction and logging
  *
  * ERROR HANDLING:
  * - Missing transcript: Exits gracefully
@@ -44,6 +48,8 @@ import { handleCapture } from '../handlers/capture';
 import { handleTabState } from '../handlers/tab-state';
 import { handleSystemIntegrity } from '../handlers/SystemIntegrity';
 import { handleNotification } from '../handlers/notification';
+import { handleLearningCapture } from '../handlers/learning-capture';
+import { handleDecisionLog } from '../handlers/decision-log';
 
 interface HookInput {
   session_id: string;
@@ -100,11 +106,13 @@ async function main() {
     handleTabState(parsed),
     handleSystemIntegrity(parsed, hookInput),
     handleNotification(parsed, hookInput.session_id),
+    handleLearningCapture(parsed, hookInput),
+    handleDecisionLog(parsed, hookInput),
   ]);
 
   // Log any failures
   results.forEach((result, index) => {
-    const handlerNames = ['Voice', 'Capture', 'TabState', 'SystemIntegrity', 'Notification'];
+    const handlerNames = ['Voice', 'Capture', 'TabState', 'SystemIntegrity', 'Notification', 'LearningCapture', 'DecisionLog'];
     if (result.status === 'rejected') {
       console.error(`[StopOrchestrator] ${handlerNames[index]} handler failed:`, result.reason);
     }

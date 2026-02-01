@@ -22,10 +22,97 @@
  * - exit(1): Critical failure (SKILL.md not found)
  */
 
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, existsSync, readdirSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { getPaiDir } from '../lib/paths';
 import { recordSessionStart } from '../lib/notifications';
+
+interface HookInput {
+  session_id?: string;
+  cwd?: string;
+}
+
+async function readStdin(): Promise<HookInput | null> {
+  try {
+    const decoder = new TextDecoder();
+    const reader = Bun.stdin.stream().getReader();
+    let input = '';
+
+    const timeoutPromise = new Promise<void>((resolve) => {
+      setTimeout(() => resolve(), 500);
+    });
+
+    const readPromise = (async () => {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        input += decoder.decode(value, { stream: true });
+      }
+    })();
+
+    await Promise.race([readPromise, timeoutPromise]);
+
+    if (input.trim()) {
+      return JSON.parse(input) as HookInput;
+    }
+  } catch (error) {
+    // Silent fail - stdin might not be JSON
+  }
+  return null;
+}
+
+/**
+ * Check for working memory file and return its content
+ * Priority: project-level (.claude/working-memory.md) > global (~/.pai/memory/state/working-memory.md)
+ */
+function loadWorkingMemory(cwd: string | undefined, paiDir: string): { content: string; path: string } | null {
+  // Priority 1: Project-level working memory
+  if (cwd) {
+    const projectPath = join(cwd, '.claude', 'working-memory.md');
+    if (existsSync(projectPath)) {
+      try {
+        const content = readFileSync(projectPath, 'utf-8');
+        return { content, path: projectPath };
+      } catch (e) {
+        console.error(`[LoadContext] Failed to read project working memory: ${e}`);
+      }
+    }
+  }
+
+  // Priority 2: Global working memory
+  const globalPath = join(paiDir, 'memory', 'state', 'working-memory.md');
+  if (existsSync(globalPath)) {
+    try {
+      const content = readFileSync(globalPath, 'utf-8');
+      return { content, path: globalPath };
+    } catch (e) {
+      console.error(`[LoadContext] Failed to read global working memory: ${e}`);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Check for handoff file and return its content (one-time read - deletes after reading)
+ */
+function loadHandoff(cwd: string | undefined): { content: string; path: string } | null {
+  if (!cwd) return null;
+
+  const handoffPath = join(cwd, '.claude', 'handoff.md');
+  if (existsSync(handoffPath)) {
+    try {
+      const content = readFileSync(handoffPath, 'utf-8');
+      // Delete after reading - handoff is one-time context
+      unlinkSync(handoffPath);
+      return { content, path: handoffPath };
+    } catch (e) {
+      console.error(`[LoadContext] Failed to read/delete handoff: ${e}`);
+    }
+  }
+
+  return null;
+}
 
 async function getCurrentDate(): Promise<string> {
   try {
@@ -113,6 +200,10 @@ async function checkActiveProgress(paiDir: string): Promise<string | null> {
 
 async function main() {
   try {
+    // Read stdin for hook input (may contain cwd)
+    const hookInput = await readStdin();
+    const cwd = hookInput?.cwd || process.cwd();
+
     // Check if this is a subagent session - if so, exit silently
     const claudeProjectDir = process.env.CLAUDE_PROJECT_DIR || '';
     const isSubagent = claudeProjectDir.includes('/.claude/Agents/') ||
@@ -186,6 +277,32 @@ This context is now active for this session. Follow all instructions, preference
     if (activeProgress) {
       console.log(activeProgress);
       console.error('📋 Active work found from previous sessions');
+    }
+
+    // Load working memory (project-level takes priority over global)
+    const workingMemory = loadWorkingMemory(cwd, paiDir);
+    if (workingMemory) {
+      const workingMemoryBlock = `<working-memory>
+# Current Working Memory
+${workingMemory.content}
+</working-memory>`;
+      console.log(workingMemoryBlock);
+      console.error(`📝 Working memory loaded from ${workingMemory.path}`);
+    } else {
+      console.error('📝 No working memory file found');
+    }
+
+    // Load handoff (one-time context injection, file is deleted after reading)
+    const handoff = loadHandoff(cwd);
+    if (handoff) {
+      const handoffBlock = `<handoff-context>
+# Post-Compaction Handoff Recovery
+${handoff.content}
+
+**This handoff was consumed and deleted. Working memory contains authoritative state.**
+</handoff-context>`;
+      console.log(handoffBlock);
+      console.error(`🔄 Handoff consumed from ${handoff.path}`);
     }
 
     console.error('✅ PAI context injected into session');

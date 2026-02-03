@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-29T16:17:05.383Z",
+  "session_id": "8165d0ac-30f8-469c-b3c3-6c3c6d1c307b",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf .git/refs/original/",
+  "reason": "Recursive deletion",
+  "action_taken": "Prompted user for confirmation"
+}

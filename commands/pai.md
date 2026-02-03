@@ -95,6 +95,39 @@ Export something from current session to PAI.
 /pai export skill debugging       # Export a debugging workflow
 ```
 
+### /pai reminders
+Show all business deadline reminders (ignores mute status).
+
+**Workflow:**
+1. Read `~/.pai/memory/reminders/deadlines.yaml`
+2. Calculate days remaining for each deadline
+3. Group by status: overdue, due soon (≤7 days), upcoming (≤30 days), future
+4. Display all deadlines with formatted output
+
+### /pai mute-reminders
+Mute deadline reminders for today (session start won't show them).
+
+**Workflow:**
+1. Write today's date to `~/.pai/memory/reminders/.muted-today`
+2. Confirm reminders are muted until tomorrow
+
+### /pai add-reminder
+Add a new business deadline reminder.
+
+**Workflow:**
+1. Ask for: title, due date, category, recurring (yearly/biennial/once)
+2. Generate unique id from title
+3. Append to `~/.pai/memory/reminders/deadlines.yaml`
+4. Confirm what was added
+
+**Example:**
+```
+/pai add-reminder
+> Title: Insurance Renewal
+> Due: 2026-03-15
+> Recurring: yearly
+```
+
 ## Notes for AI
 
 - PAI source is at `~/.pai/` (check with `pai status` if unsure)

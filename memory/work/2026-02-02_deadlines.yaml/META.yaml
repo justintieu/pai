@@ -1,0 +1,13 @@
+id: 2026-02-02_deadlines.yaml
+title: Work on deadlines.yaml
+created_at: "2026-02-02T20:32:25-08:00"
+completed_at: "2026-02-02T20:49:53-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 4c3f2eb0-9388-4654-b4af-9df9cb146561
+lineage:
+  tools_used:
+    - Edit
+  files_changed:
+    - commands/pai.md
+  agents_spawned: []

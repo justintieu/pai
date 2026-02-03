@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-01T04:55:04.160Z",
+  "session_id": "8d3787eb-ef73-4ade-ac11-83d2cb029224",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 2>&1",
+  "reason": "Piping remote script to shell",
+  "action_taken": "Hard block - exit 2"
+}

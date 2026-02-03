@@ -8,13 +8,14 @@
  * API key is configured, this handler silently does nothing.
  */
 
-import { existsSync, readFileSync, appendFileSync, mkdirSync } from 'fs';
+import { existsSync, appendFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import { paiPath, getClaudeDir } from '../lib/paths';
+import { paiPath } from '../lib/paths';
 import { getIdentity } from '../lib/identity';
 import { getISOTimestamp } from '../lib/time';
 import { isValidVoiceCompletion, getVoiceFallback } from '../lib/response-format';
 import { getNotificationConfig } from '../lib/notifications';
+import { readYamlFile } from '../lib/yaml';
 import type { ParsedTranscript } from '../tools/TranscriptParser';
 
 const DA_IDENTITY = getIdentity();
@@ -39,14 +40,16 @@ interface VoiceEvent {
 }
 
 const VOICE_LOG_PATH = paiPath('memory', 'voice', 'voice-events.jsonl');
-const CURRENT_WORK_PATH = paiPath('memory', 'state', 'current-work.json');
+const CURRENT_WORK_PATH = paiPath('memory', 'state', 'current-work.yaml');
+
+interface CurrentWork {
+  work_dir?: string;
+}
 
 function getActiveWorkDir(): string | null {
   try {
-    if (!existsSync(CURRENT_WORK_PATH)) return null;
-    const content = readFileSync(CURRENT_WORK_PATH, 'utf-8');
-    const state = JSON.parse(content);
-    if (state.work_dir) {
+    const state = readYamlFile<CurrentWork>(CURRENT_WORK_PATH);
+    if (state?.work_dir) {
       const workPath = paiPath('memory', 'work', state.work_dir);
       if (existsSync(workPath)) return workPath;
     }

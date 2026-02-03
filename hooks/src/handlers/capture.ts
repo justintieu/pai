@@ -12,18 +12,36 @@ import { sendEventToObservability, getCurrentTimestamp, getSourceApp } from '../
 import { notifyTaskComplete, notifyError, getSessionDurationMinutes } from '../lib/notifications';
 import { getLearningCategory, isLearningCapture } from '../lib/learning-utils';
 import { getPSTTimestamp, getPSTDate, getYearMonth, getISOTimestamp } from '../lib/time';
+import { readYamlFile, writeYamlFile, parseYaml, stringifyYaml } from '../lib/yaml';
+import { parseToolUseBlocks } from '../lib/change-detection';
 import type { ParsedTranscript, StructuredResponse } from '../tools/TranscriptParser';
 
 const BASE_DIR = getPaiDir();
 const WORK_DIR = join(BASE_DIR, 'memory', 'work');
 const STATE_DIR = join(BASE_DIR, 'memory', 'state');
-const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.json');
+const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.yaml');
 
 interface CurrentWork {
   session_id: string;
   work_dir: string;
   created_at: string;
   item_count: number;
+  status: 'ACTIVE' | 'INACTIVE';
+}
+
+interface WorkMeta {
+  id: string;
+  title: string;
+  created_at: string;
+  completed_at: string | null;
+  source: string;
+  status: string;
+  session_id: string;
+  lineage: {
+    tools_used: string[];
+    files_changed: string[];
+    agents_spawned: string[];
+  };
 }
 
 interface HookInput {
@@ -111,12 +129,61 @@ ${fullText.replace(/<system-reminder>[\s\S]*?<\/system-reminder>/g, '')}
 }
 
 function readCurrentWork(): CurrentWork | null {
+  return readYamlFile<CurrentWork>(CURRENT_WORK_FILE);
+}
+
+/**
+ * Update work session lineage with tools and files from this turn
+ */
+function updateWorkLineage(transcriptPath: string): void {
+  const currentWork = readCurrentWork();
+  if (!currentWork?.work_dir || currentWork.status === 'INACTIVE') {
+    return;
+  }
+
+  const workPath = join(WORK_DIR, currentWork.work_dir);
+  const metaPath = join(workPath, 'META.yaml');
+
+  if (!existsSync(metaPath)) {
+    return;
+  }
+
   try {
-    if (!existsSync(CURRENT_WORK_FILE)) return null;
-    const content = readFileSync(CURRENT_WORK_FILE, 'utf-8');
-    return JSON.parse(content) as CurrentWork;
-  } catch {
-    return null;
+    const changes = parseToolUseBlocks(transcriptPath);
+    if (changes.length === 0) {
+      return;
+    }
+
+    const metaContent = readFileSync(metaPath, 'utf-8');
+    const meta = parseYaml<WorkMeta>(metaContent);
+
+    if (!meta.lineage) {
+      meta.lineage = { tools_used: [], files_changed: [], agents_spawned: [] };
+    }
+
+    const newTools = new Set(meta.lineage.tools_used || []);
+    const newFiles = new Set(meta.lineage.files_changed || []);
+
+    for (const change of changes) {
+      newTools.add(change.tool);
+      if (change.path) {
+        newFiles.add(change.path);
+      }
+    }
+
+    meta.lineage.tools_used = Array.from(newTools);
+    meta.lineage.files_changed = Array.from(newFiles);
+
+    const updatedContent = stringifyYaml(meta as unknown as Record<string, unknown>);
+    writeFileSync(metaPath, updatedContent + '\n', 'utf-8');
+
+    // Update item_count in current-work
+    currentWork.item_count = (currentWork.item_count || 0) + 1;
+    writeYamlFile(CURRENT_WORK_FILE, currentWork as unknown as Record<string, unknown>);
+
+    console.error(`[Capture] Updated lineage: ${newTools.size} tools, ${newFiles.size} files`);
+  } catch (error) {
+    console.error(`[Capture] Error updating lineage: ${error}`);
   }
 }
 
@@ -222,6 +289,9 @@ async function captureWorkSummary(text: string, structured: StructuredResponse):
  */
 export async function handleCapture(parsed: ParsedTranscript, hookInput: HookInput): Promise<void> {
   const { lastMessage, structured, plainCompletion } = parsed;
+
+  // Update work lineage with tools and files from this turn
+  updateWorkLineage(hookInput.transcript_path);
 
   // Capture work summary (async, non-blocking)
   if (lastMessage) {

@@ -23,13 +23,16 @@
  *
  * SIDE EFFECTS:
  * - Writes to: memory/security/YYYY/MM/security-{summary}-{timestamp}.jsonl
+ * - Creates work session if none exists (for Edit/Write operations)
  * - User prompt: May trigger confirmation dialog for confirm-level operations
  */
 
 import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { homedir } from 'os';
-import { paiPath } from '../lib/paths';
+import { paiPath, getPaiDir } from '../lib/paths';
+import { readYamlFile, writeYamlFile } from '../lib/yaml';
+import { getISOTimestamp, getPSTDate } from '../lib/time';
 
 // ========================================
 // Security Event Logging
@@ -89,6 +92,115 @@ function logSecurityEvent(event: SecurityEvent): void {
   } catch {
     console.error('Warning: Failed to log security event');
   }
+}
+
+// ========================================
+// Work Session Management
+// ========================================
+
+interface CurrentWork {
+  session_id: string;
+  work_dir: string;
+  created_at: string;
+  item_count: number;
+  status: 'ACTIVE' | 'INACTIVE';
+  learning_captured?: boolean;
+}
+
+interface WorkMeta {
+  id: string;
+  title: string;
+  created_at: string;
+  completed_at: string | null;
+  source: string;
+  status: string;
+  session_id: string;
+  lineage: {
+    tools_used: string[];
+    files_changed: string[];
+    agents_spawned: string[];
+  };
+}
+
+const BASE_DIR = getPaiDir();
+const MEMORY_DIR = join(BASE_DIR, 'memory');
+const STATE_DIR = join(MEMORY_DIR, 'state');
+const WORK_DIR = join(MEMORY_DIR, 'work');
+const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.yaml');
+
+function ensureWorkSession(sessionId: string, filePath: string): void {
+  const existing = readYamlFile<CurrentWork>(CURRENT_WORK_FILE);
+
+  if (existing && existing.status === 'ACTIVE') {
+    if (existing.session_id === sessionId) {
+      return;
+    }
+
+    // Different session - mark old one as INACTIVE
+    console.error(`[SecurityValidator] New session detected, marking old work as INACTIVE`);
+    existing.status = 'INACTIVE';
+    writeYamlFile(CURRENT_WORK_FILE, existing as unknown as Record<string, unknown>);
+
+    // Also update the old META.yaml
+    if (existing.work_dir) {
+      const oldMetaPath = join(WORK_DIR, existing.work_dir, 'META.yaml');
+      if (existsSync(oldMetaPath)) {
+        try {
+          const oldMetaContent = readFileSync(oldMetaPath, 'utf-8');
+          const updatedContent = oldMetaContent
+            .replace(/^status: ACTIVE$/m, 'status: INACTIVE')
+            .replace(/^status: "ACTIVE"$/m, 'status: "INACTIVE"');
+          writeFileSync(oldMetaPath, updatedContent, 'utf-8');
+        } catch {
+          // Silent fail
+        }
+      }
+    }
+  }
+
+  const dateStr = getPSTDate();
+  const timestamp = getISOTimestamp();
+  const fileName = filePath.split('/').pop() || 'work';
+  const workDirName = `${dateStr}_${fileName.slice(0, 30)}`;
+  const workPath = join(WORK_DIR, workDirName);
+
+  if (!existsSync(STATE_DIR)) {
+    mkdirSync(STATE_DIR, { recursive: true });
+  }
+  if (!existsSync(workPath)) {
+    mkdirSync(workPath, { recursive: true });
+  }
+  const itemsPath = join(workPath, 'items');
+  if (!existsSync(itemsPath)) {
+    mkdirSync(itemsPath, { recursive: true });
+  }
+
+  const meta: WorkMeta = {
+    id: workDirName,
+    title: `Work on ${fileName}`,
+    created_at: timestamp,
+    completed_at: null,
+    source: 'PRE_TOOL_USE',
+    status: 'ACTIVE',
+    session_id: sessionId,
+    lineage: {
+      tools_used: [],
+      files_changed: [],
+      agents_spawned: [],
+    },
+  };
+  writeYamlFile(join(workPath, 'META.yaml'), meta as unknown as Record<string, unknown>);
+
+  const currentWork: CurrentWork = {
+    session_id: sessionId,
+    work_dir: workDirName,
+    created_at: timestamp,
+    item_count: 0,
+    status: 'ACTIVE',
+  };
+  writeYamlFile(CURRENT_WORK_FILE, currentWork as unknown as Record<string, unknown>);
+
+  console.error(`[SecurityValidator] Created work session: ${workDirName}`);
 }
 
 // ========================================
@@ -406,6 +518,8 @@ function handleEdit(input: HookInput): void {
     return;
   }
 
+  ensureWorkSession(input.session_id, filePath);
+
   const result = validatePath(filePath, 'write');
 
   switch (result.action) {
@@ -456,6 +570,8 @@ function handleWrite(input: HookInput): void {
     console.log(JSON.stringify({ continue: true }));
     return;
   }
+
+  ensureWorkSession(input.session_id, filePath);
 
   const result = validatePath(filePath, 'write');
 

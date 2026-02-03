@@ -1,0 +1,11 @@
+id: 2026-01-31_claude-context-management.md
+title: Work on claude-context-management.md
+created_at: "2026-01-31T21:04:08-08:00"
+completed_at: null
+source: PRE_TOOL_USE
+status: INACTIVE
+session_id: fd09f083-2d5d-440c-8ca7-441ef36984fe
+lineage:
+  tools_used: []
+  files_changed: []
+  agents_spawned: []

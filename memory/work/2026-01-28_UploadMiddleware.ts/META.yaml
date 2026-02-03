@@ -1,0 +1,30 @@
+id: 2026-01-28_UploadMiddleware.ts
+title: Work on UploadMiddleware.ts
+created_at: "2026-01-28T14:27:32-08:00"
+completed_at: "2026-01-28T15:26:35-08:00"
+source: PRE_TOOL_USE
+status: INACTIVE
+session_id: 1f264c0b-e236-45e5-bbbe-9455fbb75762
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - hooks/src/tools/TranscriptParser.ts
+    - hooks/src/handlers/learning-capture.ts
+    - hooks/src/hooks/StopOrchestrator.hook.ts
+    - /Users/justintieu/.claude/settings.json
+    - hooks/src/lib/yaml.ts
+    - hooks/src/handlers/capture.ts
+    - hooks/src/handlers/voice.ts
+    - hooks/src/hooks/WorkCompletionLearning.hook.ts
+    - hooks/src/hooks/SessionSummary.hook.ts
+    - hooks/src/handlers/SystemIntegrity.ts
+    - hooks/src/lib/change-detection.ts
+    - hooks/src/hooks/Gateway.hook.ts
+    - memory/state/integrity-state.yaml
+    - rules/coding.md
+    - hooks/src/hooks/SecurityValidator.hook.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.planning/REQUIREMENTS.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.planning/phases/02-transcription-and-analysis/02-CONTEXT.md
+  agents_spawned: []

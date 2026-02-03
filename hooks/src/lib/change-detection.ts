@@ -8,6 +8,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join, relative, basename } from 'path';
 import { getPaiDir } from './paths';
+import { readYamlFile } from './yaml';
 
 // ============================================================================
 // Types
@@ -53,7 +54,7 @@ export interface IntegrityState {
 // ============================================================================
 
 const PAI_DIR = getPaiDir();
-const STATE_FILE = join(PAI_DIR, 'memory', 'state', 'integrity-state.json');
+const STATE_FILE = join(PAI_DIR, 'memory', 'state', 'integrity-state.yaml');
 
 // Paths that are excluded from integrity checks
 const EXCLUDED_PATHS = [
@@ -325,13 +326,7 @@ const COOLDOWN_MINUTES = 2;
  * Read the current integrity state.
  */
 export function readIntegrityState(): IntegrityState | null {
-  try {
-    if (!existsSync(STATE_FILE)) return null;
-    const content = readFileSync(STATE_FILE, 'utf-8');
-    return JSON.parse(content);
-  } catch {
-    return null;
-  }
+  return readYamlFile<IntegrityState>(STATE_FILE);
 }
 
 /**

@@ -1,0 +1,28 @@
+id: 2026-01-28_transcription.ts
+title: Work on transcription.ts
+created_at: "2026-01-28T16:08:44-08:00"
+completed_at: "2026-01-28T16:24:26-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 7c33c18d-01e2-4d3f-9c5c-3ebed0d1ddf1
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - hooks/src/tools/TranscriptParser.ts
+    - hooks/src/handlers/learning-capture.ts
+    - hooks/src/hooks/StopOrchestrator.hook.ts
+    - /Users/justintieu/.claude/settings.json
+    - hooks/src/lib/yaml.ts
+    - hooks/src/handlers/capture.ts
+    - hooks/src/handlers/voice.ts
+    - hooks/src/hooks/WorkCompletionLearning.hook.ts
+    - hooks/src/hooks/SessionSummary.hook.ts
+    - hooks/src/handlers/SystemIntegrity.ts
+    - hooks/src/lib/change-detection.ts
+    - hooks/src/hooks/Gateway.hook.ts
+    - memory/state/integrity-state.yaml
+    - rules/coding.md
+    - hooks/src/hooks/SecurityValidator.hook.ts
+  agents_spawned: []

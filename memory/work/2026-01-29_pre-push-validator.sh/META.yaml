@@ -1,0 +1,44 @@
+id: 2026-01-29_pre-push-validator.sh
+title: Work on pre-push-validator.sh
+created_at: "2026-01-29T10:17:31-08:00"
+completed_at: null
+source: PRE_TOOL_USE
+status: INACTIVE
+session_id: b07a5ab0-f9eb-4d68-a1c5-9ecfeb3f1a97
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - context/preferences/index.md
+    - rules/notifications.md
+    - /Users/justintieu/.claude/CLAUDE.md
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/lib/work-state.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/handlers/capture.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/hooks/SessionSummary.hook.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/hooks/WorkCompletionLearning.hook.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/hooks/PreCompact.hook.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/handlers/voice.ts
+    - /Users/justintieu/Documents/github/kasanariba-ai/core/hooks/src/hooks/StopOrchestrator.hook.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/README.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-framework/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-runtime/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/application-services/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/core-infrastructure/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/data-adapters/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-mcp-sfdc/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/salesforce/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/data-schema-migration/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/external-connectors/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-email-agent/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-profet/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-ai-web/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/shared-ci.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/agent-framework/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/agent-runtime/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/application-services/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/core-infrastructure/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/external-connectors/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/provus-mcp-sfdc/package.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/agent-framework/client-sdk/package.json
+  agents_spawned: []

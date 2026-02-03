@@ -1,0 +1,17 @@
+id: 2026-02-02_use-claude.ts
+title: Work on use-claude.ts
+created_at: "2026-02-02T00:12:27-08:00"
+completed_at: "2026-02-02T00:13:24-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 5fc80b79-4f30-4534-8686-6c2929275019
+lineage:
+  tools_used:
+    - Edit
+  files_changed:
+    - /Users/justintieu/Documents/github/kobo/src/components/ui/sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src/App.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-item.tsx
+    - /Users/justintieu/Documents/github/kobo/src/hooks/use-claude.ts
+  agents_spawned: []

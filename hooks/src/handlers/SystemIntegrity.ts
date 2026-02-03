@@ -21,6 +21,7 @@ import { spawn } from 'child_process';
 import { join } from 'path';
 import { paiPath } from '../lib/paths';
 import { sendVoice, getNotificationConfig } from '../lib/notifications';
+import { writeYamlFile } from '../lib/yaml';
 import {
   parseToolUseBlocks,
   isSignificantChange,
@@ -42,7 +43,7 @@ interface HookInput {
 }
 
 const STATE_DIR = paiPath('memory', 'state');
-const STATE_FILE = join(STATE_DIR, 'integrity-state.json');
+const STATE_FILE = join(STATE_DIR, 'integrity-state.yaml');
 
 /**
  * Send voice notification for integrity check start.
@@ -70,17 +71,13 @@ async function notifyIntegrityStart(): Promise<void> {
  */
 function updateIntegrityState(changes: FileChange[]): void {
   try {
-    if (!existsSync(STATE_DIR)) {
-      mkdirSync(STATE_DIR, { recursive: true });
-    }
-
     const state = {
       last_run: new Date().toISOString(),
       last_changes_hash: hashChanges(changes),
       cooldown_until: getCooldownEndTime(),
     };
 
-    writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+    writeYamlFile(STATE_FILE, state);
     console.error('[SystemIntegrity] Updated state file');
   } catch (error) {
     console.error('[SystemIntegrity] Failed to update state:', error);

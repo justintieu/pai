@@ -1,0 +1,18 @@
+id: 2026-02-02_13-RESEARCH.md
+title: Work on 13-RESEARCH.md
+created_at: "2026-02-02T00:22:52-08:00"
+completed_at: "2026-02-02T00:24:44-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: b22927f3-8fdd-4443-b0bd-092849869ac3
+lineage:
+  tools_used:
+    - Edit
+  files_changed:
+    - /Users/justintieu/Documents/github/kobo/src/components/ui/sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src/App.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-item.tsx
+    - /Users/justintieu/Documents/github/kobo/src/hooks/use-claude.ts
+    - /Users/justintieu/Documents/github/kobo/src-tauri/src/claude.rs
+  agents_spawned: []

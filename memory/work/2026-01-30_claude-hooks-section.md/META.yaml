@@ -1,0 +1,14 @@
+id: 2026-01-30_claude-hooks-section.md
+title: Work on claude-hooks-section.md
+created_at: "2026-01-30T09:50:31-08:00"
+completed_at: "2026-01-30T10:34:11-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 8903ffc1-0221-4176-81d6-68c6655a80f3
+lineage:
+  tools_used:
+    - Write
+  files_changed:
+    - /private/tmp/claude/-Users-justintieu-Documents-github-kasanariba-ai/8903ffc1-0221-4176-81d6-68c6655a80f3/scratchpad/confluence-update.md
+    - /Users/justintieu/Documents/github/kasanariba-ai/docs/claude-context-management-confluence.md
+  agents_spawned: []

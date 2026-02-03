@@ -27,11 +27,12 @@ import { join, dirname } from 'path';
 import { getISOTimestamp, getPSTDate } from '../lib/time';
 import { getLearningCategory } from '../lib/learning-utils';
 import { getPaiDir } from '../lib/paths';
+import { readYamlFile } from '../lib/yaml';
 
 const BASE_DIR = getPaiDir();
 const MEMORY_DIR = join(BASE_DIR, 'memory');
 const STATE_DIR = join(MEMORY_DIR, 'state');
-const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.json');
+const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.yaml');
 const WORK_DIR = join(MEMORY_DIR, 'work');
 const LEARNING_DIR = join(MEMORY_DIR, 'learning');
 
@@ -211,12 +212,11 @@ async function main() {
       process.exit(0);
     }
 
-    if (!existsSync(CURRENT_WORK_FILE)) {
+    const currentWork = readYamlFile<CurrentWork>(CURRENT_WORK_FILE);
+    if (!currentWork) {
       console.error('[WorkCompletionLearning] No active work session');
       process.exit(0);
     }
-
-    const currentWork: CurrentWork = JSON.parse(readFileSync(CURRENT_WORK_FILE, 'utf-8'));
 
     if (!currentWork.work_dir) {
       console.error('[WorkCompletionLearning] No work directory in current session');

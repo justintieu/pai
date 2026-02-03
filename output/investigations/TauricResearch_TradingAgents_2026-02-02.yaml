@@ -1,0 +1,116 @@
+investigation:
+  repo: TauricResearch/TradingAgents
+  url: "https://github.com/TauricResearch/TradingAgents"
+  date: "2026-02-02T04:26:52.683Z"
+  mode: quick_scan
+
+metadata:
+  description: "TradingAgents: Multi-Agents LLM Financial Trading Framework"
+  language: Python
+  topics:
+    - agent
+    - finance
+    - llm
+    - multiagent
+    - trading
+  stars: 28900
+  forks: 5545
+  size_kb: 3957
+  last_push: "2025-10-09T07:34:10Z"
+  created: "2024-12-28T03:31:08Z"
+  license: Apache-2.0
+
+structure:
+  entry_points:
+    - path: main.py
+      type: main_entry
+    - path: README.md
+      type: documentation
+    - path: pyproject.toml
+      type: config
+    - path: requirements.txt
+      type: config
+    - path: setup.py
+      type: config
+    - path: tradingagents/graph/setup.py
+      type: config
+  key_directories:
+    - path: assets/
+      purpose: static_assets
+  file_count: 87
+  truncated: false
+
+dependencies:
+  runtime:
+    - name: akshare
+      version: >=1.16.98
+    - name: backtrader
+      version: >=1.9.78.123
+    - name: chainlit
+      version: >=2.5.5
+    - name: chromadb
+      version: >=1.0.12
+    - name: eodhd
+      version: >=1.0.32
+    - name: feedparser
+      version: >=6.0.11
+    - name: finnhub-python
+      version: >=2.4.23
+    - name: grip
+      version: >=4.6.2
+    - name: langchain-anthropic
+      version: >=0.3.15
+    - name: langchain-experimental
+      version: >=0.3.4
+    - name: langchain-google-genai
+      version: >=2.1.5
+    - name: langchain-openai
+      version: >=0.3.23
+    - name: langgraph
+      version: >=0.4.8
+    - name: pandas
+      version: >=2.3.0
+    - name: parsel
+      version: >=1.10.0
+    - name: praw
+      version: >=7.8.1
+    - name: pytz
+      version: >=2025.2
+    - name: questionary
+      version: >=2.1.0
+    - name: redis
+      version: >=6.2.0
+    - name: requests
+      version: >=2.32.4
+    - name: rich
+      version: >=14.0.0
+    - name: setuptools
+      version: >=80.9.0
+    - name: stockstats
+      version: >=0.6.5
+    - name: tqdm
+      version: >=4.67.1
+    - name: tushare
+      version: >=1.4.21
+    - name: typing-extensions
+      version: >=4.14.0
+    - name: yfinance
+      version: >=0.2.63
+  dev: []
+
+insights:
+  patterns: []
+  notable:
+    - Uses Python
+    - Popular repository (28900 stars)
+    - Comprehensive documentation
+    - Has contribution guidelines
+    - Apache-2.0 licensed
+  potential_learnings:
+    - Popular repo patterns worth studying
+    - Architecture documentation available
+    - API design patterns
+
+rate_limit:
+  calls_used: 5
+  calls_remaining: 4934

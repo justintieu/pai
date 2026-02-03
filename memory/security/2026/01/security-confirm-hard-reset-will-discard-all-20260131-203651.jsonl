@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-01T04:36:51.501Z",
+  "session_id": "27962f51-6b32-48d6-a9b8-c2b0e1f1330b",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "git reset --hard 26774ef4",
+  "reason": "Hard reset will discard all changes",
+  "action_taken": "Prompted user for confirmation"
+}

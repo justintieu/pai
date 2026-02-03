@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-02T19:57:50.030Z",
+  "session_id": "1051bb7d-0342-4da9-869f-b7386d5078e0",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf /Users/justintieu/Documents/github/kobo/.icon-temp && pnpm remove sharp",
+  "reason": "Recursive deletion of root directory",
+  "action_taken": "Hard block - exit 2"
+}

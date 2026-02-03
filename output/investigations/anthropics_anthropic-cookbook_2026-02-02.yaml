@@ -1,0 +1,123 @@
+investigation:
+  repo: anthropics/anthropic-cookbook
+  url: "https://github.com/anthropics/anthropic-cookbook"
+  date: "2026-02-02T04:26:43.534Z"
+  mode: quick_scan
+
+metadata:
+  description: A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.
+  language: Jupyter Notebook
+  topics: []
+  stars: 32250
+  forks: 3321
+  size_kb: 199953
+  last_push: "2026-01-30T23:38:27Z"
+  created: "2023-08-15T20:23:51Z"
+  license: MIT
+
+structure:
+  entry_points:
+    - path: README.md
+      type: documentation
+    - path: capabilities/README.md
+      type: documentation
+    - path: capabilities/classification/README.md
+      type: documentation
+    - path: capabilities/classification/evaluation/README.md
+      type: documentation
+    - path: capabilities/contextual-embeddings/README.md
+      type: documentation
+    - path: capabilities/retrieval_augmented_generation/README.md
+      type: documentation
+    - path: capabilities/retrieval_augmented_generation/evaluation/README.md
+      type: documentation
+    - path: capabilities/summarization/README.md
+      type: documentation
+    - path: capabilities/summarization/evaluation/README.md
+      type: documentation
+    - path: capabilities/text_to_sql/README.md
+      type: documentation
+    - path: capabilities/text_to_sql/evaluation/README.md
+      type: documentation
+    - path: claude_agent_sdk/README.md
+      type: documentation
+    - path: patterns/agents/README.md
+      type: documentation
+    - path: skills/README.md
+      type: documentation
+    - path: third_party/Deepgram/README.md
+      type: documentation
+    - path: third_party/ElevenLabs/README.md
+      type: documentation
+    - path: third_party/LlamaIndex/README.md
+      type: documentation
+    - path: Makefile
+      type: config
+    - path: claude_agent_sdk/observability_agent/docker/Dockerfile
+      type: config
+    - path: claude_agent_sdk/pyproject.toml
+      type: config
+    - path: pyproject.toml
+      type: config
+    - path: skills/requirements.txt
+      type: config
+    - path: third_party/ElevenLabs/requirements.txt
+      type: config
+    - path: tool_use/requirements.txt
+      type: config
+    - path: tests/__init__.py
+      type: test_entry
+    - path: tests/conftest.py
+      type: test_entry
+  key_directories:
+    - path: tests/
+      purpose: testing
+    - path: .github/
+      purpose: ci_cd
+    - path: scripts/
+      purpose: build_scripts
+    - path: third_party/
+      purpose: vendor_code
+  file_count: 485
+  truncated: false
+
+dependencies:
+  runtime:
+    - name: anthropic
+      version: >=0.71.0
+    - name: ipykernel
+      version: >=7.1.0
+    - name: notebook
+      version: >=7.4.7
+    - name: numpy
+      version: >=2.3.4
+    - name: pandas
+      version: >=2.3.3
+    - name: jupyter
+      version: >=1.1.1
+    - name: rich
+      version: >=14.2.0
+    - name: python-dotenv
+      version: >=1.2.1
+    - name: voyageai
+      version: >=0.3.5
+  dev: []
+
+insights:
+  patterns: []
+  notable:
+    - Uses Jupyter Notebook
+    - Popular repository (32250 stars)
+    - Large repository (>100MB)
+    - Has contribution guidelines
+    - MIT licensed
+  potential_learnings:
+    - Testing infrastructure worth examining
+    - GitHub Actions workflow patterns
+    - Popular repo patterns worth studying
+    - Architecture documentation available
+    - API design patterns
+
+rate_limit:
+  calls_used: 5
+  calls_remaining: 4947

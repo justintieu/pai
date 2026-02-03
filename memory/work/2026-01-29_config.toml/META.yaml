@@ -1,0 +1,13 @@
+id: 2026-01-29_config.toml
+title: Work on config.toml
+created_at: "2026-01-29T04:44:24-08:00"
+completed_at: null
+source: PRE_TOOL_USE
+status: INACTIVE
+session_id: a88f5848-2471-4b29-98b1-75edacb61973
+lineage:
+  tools_used:
+    - Write
+  files_changed:
+    - /Users/justintieu/Library/Application Support/gcalcli/config.toml
+  agents_spawned: []

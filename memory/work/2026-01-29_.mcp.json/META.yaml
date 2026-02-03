@@ -1,0 +1,18 @@
+id: 2026-01-29_.mcp.json
+title: Work on .mcp.json
+created_at: "2026-01-29T08:08:44-08:00"
+completed_at: "2026-01-29T08:10:48-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 2b1785a9-d6b8-402d-957e-c545d3394a5d
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - /Users/justintieu/Documents/github/provus-ai-assistant/data-adapters/src/domain/repositories/IPSQQuoteRepository.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/data-adapters/src/adapters/salesforce/repositories/SalesforcePSQQuoteRepository.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/provus-ai-web/server/src/presentation/controllers/documents/DocumentQuoteController.ts
+    - /Users/justintieu/.claude/settings.json
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.mcp.json
+  agents_spawned: []

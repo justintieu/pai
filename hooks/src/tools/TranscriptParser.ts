@@ -43,6 +43,8 @@ export interface ParsedTranscript {
   raw: string;
   /** Last assistant message text */
   lastMessage: string;
+  /** Last user message text (for completion signal detection) */
+  lastUserMessage: string;
   /** Voice completion with prosody (for TTS) */
   voiceCompletion: string;
   /** Plain completion without formatting (for tab title) */
@@ -101,6 +103,33 @@ export function parseLastAssistantMessage(transcriptContent: string): string {
   }
 
   return lastAssistantMessage;
+}
+
+/**
+ * Parse last user message from transcript content.
+ * Used for detecting topic completion signals (gratitude, confirmation, etc.)
+ */
+export function parseLastUserMessage(transcriptContent: string): string {
+  const lines = transcriptContent.trim().split('\n');
+  let lastUserMessage = '';
+
+  for (const line of lines) {
+    if (line.trim()) {
+      try {
+        const entry = JSON.parse(line) as Record<string, unknown>;
+        if (entry.type === 'human' && (entry.message as Record<string, unknown>)?.content) {
+          const text = contentToText((entry.message as Record<string, unknown>).content);
+          if (text) {
+            lastUserMessage = text;
+          }
+        }
+      } catch {
+        // Skip invalid JSON lines
+      }
+    }
+  }
+
+  return lastUserMessage;
 }
 
 /**
@@ -290,10 +319,12 @@ export function parseTranscript(transcriptPath: string): ParsedTranscript {
   try {
     const raw = readFileSync(transcriptPath, 'utf-8');
     const lastMessage = parseLastAssistantMessage(raw);
+    const lastUserMessage = parseLastUserMessage(raw);
 
     return {
       raw,
       lastMessage,
+      lastUserMessage,
       voiceCompletion: extractVoiceCompletion(lastMessage),
       plainCompletion: extractCompletionPlain(lastMessage),
       structured: extractStructuredSections(lastMessage),
@@ -304,6 +335,7 @@ export function parseTranscript(transcriptPath: string): ParsedTranscript {
     return {
       raw: '',
       lastMessage: '',
+      lastUserMessage: '',
       voiceCompletion: '',
       plainCompletion: 'Completing task',  // Must be valid gerund for tab title
       structured: {},

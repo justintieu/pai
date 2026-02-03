@@ -1,0 +1,215 @@
+investigation:
+  repo: microsoft/autogen
+  url: "https://github.com/microsoft/autogen"
+  date: "2026-02-02T04:26:55.352Z"
+  mode: quick_scan
+
+metadata:
+  description: A programming framework for agentic AI
+  language: Python
+  topics:
+    - agentic
+    - agentic-agi
+    - agents
+    - ai
+    - autogen
+    - autogen-ecosystem
+    - chatgpt
+    - framework
+    - llm-agent
+    - llm-framework
+  stars: 54135
+  forks: 8165
+  size_kb: 148202
+  last_push: "2026-01-22T16:27:56Z"
+  created: "2023-08-18T11:43:45Z"
+  license: CC-BY-4.0
+
+structure:
+  entry_points:
+    - path: README.md
+      type: documentation
+    - path: docs/dotnet/README.md
+      type: documentation
+    - path: dotnet/README.md
+      type: documentation
+    - path: dotnet/nuget/README.md
+      type: documentation
+    - path: dotnet/samples/Hello/HelloAgent/README.md
+      type: documentation
+    - path: dotnet/samples/Hello/HelloAgentState/README.md
+      type: documentation
+    - path: dotnet/samples/Hello/README.md
+      type: documentation
+    - path: dotnet/samples/dev-team/README.md
+      type: documentation
+    - path: dotnet/samples/dev-team/seed-memory/README.md
+      type: documentation
+    - path: dotnet/src/AutoGen.LMStudio/README.md
+      type: documentation
+    - path: dotnet/src/AutoGen.SourceGenerator/README.md
+      type: documentation
+    - path: dotnet/test/Microsoft.AutoGen.Integration.Tests.AppHosts/HelloAgentTests/README.md
+      type: documentation
+    - path: dotnet/test/Microsoft.AutoGen.Integration.Tests.AppHosts/core_xlang_hello_python_agent/README.md
+      type: documentation
+    - path: dotnet/website/README.md
+      type: documentation
+    - path: python/README.md
+      type: documentation
+    - path: python/docs/README.md
+      type: documentation
+    - path: python/packages/agbench/README.md
+      type: documentation
+    - path: python/packages/agbench/benchmarks/GAIA/README.md
+      type: documentation
+    - path: python/packages/agbench/benchmarks/HumanEval/README.md
+      type: documentation
+    - path: python/packages/agbench/benchmarks/README.md
+      type: documentation
+    - path: python/packages/autogen-agentchat/README.md
+      type: documentation
+    - path: python/packages/autogen-core/README.md
+      type: documentation
+    - path: python/packages/autogen-ext/README.md
+      type: documentation
+    - path: python/packages/autogen-ext/src/autogen_ext/experimental/task_centric_memory/README.md
+      type: documentation
+    - path: python/packages/autogen-ext/src/autogen_ext/tools/mcp/_host/README.md
+      type: documentation
+    - path: python/packages/autogen-magentic-one/README.md
+      type: documentation
+    - path: python/packages/autogen-studio/README.md
+      type: documentation
+    - path: python/packages/autogen-studio/frontend/README.md
+      type: documentation
+    - path: python/packages/autogen-studio/frontend/src/components/shared/README.md
+      type: documentation
+    - path: python/packages/autogen-test-utils/README.md
+      type: documentation
+    - path: python/packages/component-schema-gen/README.md
+      type: documentation
+    - path: python/packages/magentic-one-cli/README.md
+      type: documentation
+    - path: python/packages/pyautogen/README.md
+      type: documentation
+    - path: python/samples/agentchat_azure_postgresql/README.md
+      type: documentation
+    - path: python/samples/agentchat_chainlit/README.md
+      type: documentation
+    - path: python/samples/agentchat_chess_game/README.md
+      type: documentation
+    - path: python/samples/agentchat_fastapi/README.md
+      type: documentation
+    - path: python/samples/agentchat_graphrag/README.md
+      type: documentation
+    - path: python/samples/agentchat_streamlit/README.md
+      type: documentation
+    - path: python/samples/core_async_human_in_the_loop/README.md
+      type: documentation
+    - path: python/samples/core_chainlit/README.md
+      type: documentation
+    - path: python/samples/core_chess_game/README.md
+      type: documentation
+    - path: python/samples/core_distributed-group-chat/README.md
+      type: documentation
+    - path: python/samples/core_semantic_router/README.md
+      type: documentation
+    - path: python/samples/core_streaming_handoffs_fastapi/README.md
+      type: documentation
+    - path: python/samples/core_streaming_response_fastapi/README.md
+      type: documentation
+    - path: python/samples/core_xlang_hello_python_agent/README.md
+      type: documentation
+    - path: python/samples/gitty/README.md
+      type: documentation
+    - path: python/samples/task_centric_memory/README.md
+      type: documentation
+    - path: python/templates/new-package/{{cookiecutter.package_name}}/README.md
+      type: documentation
+    - path: .devcontainer/Dockerfile
+      type: config
+    - path: dotnet/samples/dev-team/seed-memory/Dockerfile
+      type: config
+    - path: dotnet/src/Microsoft.AutoGen/AgentHost/Dockerfile
+      type: config
+    - path: python/packages/agbench/benchmarks/GAIA/Templates/MagenticOne/requirements.txt
+      type: config
+    - path: python/packages/agbench/benchmarks/GAIA/Templates/ParallelAgents/requirements.txt
+      type: config
+    - path: python/packages/agbench/benchmarks/GAIA/Templates/SelectorGroupChat/requirements.txt
+      type: config
+    - path: python/packages/agbench/benchmarks/HumanEval/Templates/AgentChat/requirements.txt
+      type: config
+    - path: python/packages/agbench/pyproject.toml
+      type: config
+    - path: python/packages/agbench/setup.py
+      type: config
+    - path: python/packages/agbench/src/agbench/res/Dockerfile
+      type: config
+    - path: python/packages/agbench/src/agbench/template/requirements.txt
+      type: config
+    - path: python/packages/autogen-agentchat/pyproject.toml
+      type: config
+    - path: python/packages/autogen-core/pyproject.toml
+      type: config
+    - path: python/packages/autogen-ext/pyproject.toml
+      type: config
+    - path: python/packages/autogen-studio/Dockerfile
+      type: config
+    - path: python/packages/autogen-studio/frontend/package.json
+      type: config
+    - path: python/packages/autogen-studio/frontend/tsconfig.json
+      type: config
+    - path: python/packages/autogen-studio/pyproject.toml
+      type: config
+    - path: python/packages/autogen-studio/requirements.txt
+      type: config
+    - path: python/packages/autogen-studio/setup.py
+      type: config
+    - path: python/packages/autogen-test-utils/pyproject.toml
+      type: config
+    - path: python/packages/component-schema-gen/pyproject.toml
+      type: config
+    - path: python/packages/magentic-one-cli/pyproject.toml
+      type: config
+    - path: python/packages/pyautogen/pyproject.toml
+      type: config
+    - path: python/pyproject.toml
+      type: config
+    - path: python/samples/agentchat_graphrag/requirements.txt
+      type: config
+    - path: python/samples/core_streaming_handoffs_fastapi/requirements.txt
+      type: config
+    - path: python/samples/gitty/pyproject.toml
+      type: config
+    - path: python/templates/new-package/{{cookiecutter.package_name}}/pyproject.toml
+      type: config
+  key_directories:
+    - path: docs/
+      purpose: documentation
+    - path: .github/
+      purpose: ci_cd
+  file_count: 2319
+  truncated: false
+
+dependencies: null
+
+insights:
+  patterns: []
+  notable:
+    - Uses Python
+    - Popular repository (54135 stars)
+    - Large repository (>100MB)
+    - Substantial codebase (1837 files)
+    - Comprehensive documentation
+  potential_learnings:
+    - Documentation organization approach
+    - GitHub Actions workflow patterns
+    - Popular repo patterns worth studying
+    - Architecture documentation available
+    - API design patterns
+
+rate_limit:
+  calls_used: 4
+  calls_remaining: 4930

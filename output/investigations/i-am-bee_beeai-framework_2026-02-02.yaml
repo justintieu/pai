@@ -1,0 +1,94 @@
+investigation:
+  repo: i-am-bee/beeai-framework
+  url: "https://github.com/i-am-bee/beeai-framework"
+  date: "2026-02-02T04:25:16.558Z"
+  mode: quick_scan
+
+metadata:
+  description: Build production-ready AI agents in both Python and Typescript.
+  language: Python
+  topics:
+    - agents
+    - ai
+    - ai-agent
+    - beeai
+    - framework
+    - llm
+    - multiagent
+    - python
+    - typescript
+  stars: 3079
+  forks: 402
+  size_kb: 13278
+  last_push: "2026-01-28T15:45:55Z"
+  created: "2024-08-23T14:03:06Z"
+  license: Apache-2.0
+
+structure:
+  entry_points:
+    - path: README.md
+      type: documentation
+    - path: python/README.md
+      type: documentation
+    - path: python/beeai_framework/adapters/amazon_bedrock/backend/README.md
+      type: documentation
+    - path: python/examples/README.md
+      type: documentation
+    - path: python/examples/agents/README.md
+      type: documentation
+    - path: python/examples/notebooks/README.md
+      type: documentation
+    - path: typescript/README.md
+      type: documentation
+    - path: typescript/examples/README.md
+      type: documentation
+    - path: typescript/examples/agents/granite/README.md
+      type: documentation
+    - path: typescript/examples/workflows/competitive-analysis/README.md
+      type: documentation
+    - path: docs/package.json
+      type: config
+    - path: python/eval/setup.py
+      type: config
+    - path: python/examples/middleware/requirements.txt
+      type: config
+    - path: python/examples/notebooks/requirements.txt
+      type: config
+    - path: python/examples/requirements.txt
+      type: config
+    - path: python/examples/serve/requirements.txt
+      type: config
+    - path: python/pyproject.toml
+      type: config
+    - path: typescript/examples/tsconfig.json
+      type: config
+    - path: typescript/package.json
+      type: config
+    - path: typescript/tsconfig.json
+      type: config
+  key_directories:
+    - path: docs/
+      purpose: documentation
+    - path: .github/
+      purpose: ci_cd
+  file_count: 1236
+  truncated: false
+
+dependencies: null
+
+insights:
+  patterns: []
+  notable:
+    - Uses Python
+    - Popular repository (3079 stars)
+    - Substantial codebase (973 files)
+    - Comprehensive documentation
+    - Has contribution guidelines
+  potential_learnings:
+    - Documentation organization approach
+    - GitHub Actions workflow patterns
+    - Popular repo patterns worth studying
+
+rate_limit:
+  calls_used: 4
+  calls_remaining: 4970

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-01-28T20:48:06.653Z",
+  "session_id": "1883970f-1b43-4aaa-bfb1-5ba6e5104bcc",
+  "title": "TranscriptParser, learning-capture, StopOrchestrator Hooks Updated",
+  "significance": "major",
+  "change_type": "hook_update",
+  "changes": [
+    {
+      "tool": "Edit",
+      "path": "hooks/src/tools/TranscriptParser.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "hooks/src/handlers/learning-capture.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/StopOrchestrator.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    }
+  ]
+}

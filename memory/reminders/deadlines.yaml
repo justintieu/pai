@@ -1,0 +1,41 @@
+# Business Deadline Reminders
+# Managed by PAI - edit carefully or use /pai add-reminder
+
+deadlines:
+  - id: hayward-business-renewal
+    title: Hayward Business Renewal
+    due: 2026-02-28
+    category: city-license
+    critical: true
+    recurring: yearly
+    remind_at:
+      - 30  # days before
+      - 14
+      - 7
+      - 1
+    notes: City of Hayward business license renewal
+
+  - id: wyoming-atlas-annual-report
+    title: Wyoming Annual Report (Atlas Tactical Group)
+    due: 2026-06-01
+    category: state-filing
+    critical: true
+    recurring: yearly
+    remind_at:
+      - 30
+      - 14
+      - 7
+    notes: Wyoming Secretary of State annual report filing
+
+  - id: california-tensaku-soi
+    title: California Statement of Information (Tensaku Labs)
+    due: 2026-07-01
+    category: state-filing
+    critical: true
+    recurring: biennial
+    remind_at:
+      - 60
+      - 30
+      - 14
+      - 7
+    notes: California Secretary of State Statement of Information (biennial filing)

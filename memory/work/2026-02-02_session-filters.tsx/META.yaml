@@ -1,0 +1,19 @@
+id: 2026-02-02_session-filters.tsx
+title: Work on session-filters.tsx
+created_at: "2026-02-02T16:03:29-08:00"
+completed_at: "2026-02-02T16:54:28-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 54d4f456-4c4b-4606-ad22-e37627553ff0
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-filters.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src-tauri/src/claude.rs
+    - /Users/justintieu/Documents/github/kobo/src/components/project/welcome-screen.tsx
+    - /Users/justintieu/Documents/github/kobo/src/App.tsx
+    - /Users/justintieu/Documents/github/kobo/.claude/working-memory.md
+  agents_spawned: []

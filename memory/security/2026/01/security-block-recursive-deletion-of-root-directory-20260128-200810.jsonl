@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-29T04:08:10.240Z",
+  "session_id": "34bb6cb8-b457-4f61-ab7b-3a9ba8089472",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf /Users/justintieu/Documents/github/provus-ai-assistant/planning && ls -la /Users/justintieu/Documents/github/provus-ai-assistant/.planning/phases/",
+  "reason": "Recursive deletion of root directory",
+  "action_taken": "Hard block - exit 2"
+}

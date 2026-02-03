@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-01T10:02:03.261Z",
+  "session_id": "9e9d6226-b738-4e2f-b75c-13bef616dab7",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf /tmp/test-handoff /tmp/test-transcript.jsonl",
+  "reason": "Recursive deletion of root directory",
+  "action_taken": "Hard block - exit 2"
+}

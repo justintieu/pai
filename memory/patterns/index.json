@@ -1,4 +1,13 @@
 {
-  "patterns": {},
-  "lastUpdated": "2026-01-27T00:00:00Z"
+  "patterns": {
+    "test-pattern_test_repo": {
+      "status": "approved",
+      "detectedAt": "2026-02-01T05:25:24.598Z",
+      "updatedAt": "2026-02-01T05:34:13.831Z",
+      "repo": "test/repo",
+      "type": "workflow",
+      "description": "A test pattern for storage verification"
+    }
+  },
+  "lastUpdated": "2026-02-01T05:34:13.831Z"
 }

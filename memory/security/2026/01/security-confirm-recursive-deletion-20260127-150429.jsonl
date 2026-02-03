@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-27T23:04:29.669Z",
+  "session_id": "c01499c6-5949-49c5-8ef5-17808d196c6f",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf .planning/phases/",
+  "reason": "Recursive deletion",
+  "action_taken": "Prompted user for confirmation"
+}

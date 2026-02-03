@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "fullName": "microsoft/agent-framework",
+      "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
+      "language": "Python",
+      "stargazersCount": 6897,
+      "updatedAt": "2026-02-02T04:00:50Z",
+      "url": "https://github.com/microsoft/agent-framework"
+    },
+    {
+      "fullName": "TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stargazersCount": 28900,
+      "updatedAt": "2026-02-02T04:03:32Z",
+      "url": "https://github.com/TauricResearch/TradingAgents"
+    },
+    {
+      "fullName": "zai-org/Open-AutoGLM",
+      "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
+      "language": "Python",
+      "stargazersCount": 22972,
+      "updatedAt": "2026-02-02T04:22:57Z",
+      "url": "https://github.com/zai-org/Open-AutoGLM"
+    }
+  ],
+  "query": "agent framework",
+  "timestamp": "2026-02-02T04:26:47.387Z"
+}

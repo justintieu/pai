@@ -1,0 +1,861 @@
+investigation:
+  repo: VoltAgent/voltagent
+  url: "https://github.com/VoltAgent/voltagent"
+  date: "2026-02-02T04:25:19.410Z"
+  mode: quick_scan
+
+metadata:
+  description: AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
+  language: TypeScript
+  topics:
+    - agents
+    - ai
+    - ai-agents
+    - ai-agents-framework
+    - aiagentframework
+    - chatbots
+    - chatgpt
+    - framework
+    - javascript
+    - llm
+    - llm-observability
+    - mcp
+    - multiagent
+    - nodejs
+    - observability
+    - open-source
+    - openai
+    - rag
+    - tts
+    - typescript
+  stars: 5398
+  forks: 516
+  size_kb: 26707
+  last_push: "2026-01-31T04:12:51Z"
+  created: "2025-04-16T15:41:18Z"
+  license: MIT
+
+structure:
+  entry_points:
+    - path: .changeset/README.md
+      type: documentation
+    - path: README.md
+      type: documentation
+    - path: archive/deprecated-providers/README.md
+      type: documentation
+    - path: archive/deprecated-providers/anthropic-ai/README.md
+      type: documentation
+    - path: archive/deprecated-providers/google-ai/README.md
+      type: documentation
+    - path: archive/deprecated-providers/groq-ai/README.md
+      type: documentation
+    - path: archive/deprecated-providers/vercel-ai/README.md
+      type: documentation
+    - path: archive/deprecated-providers/vercel-ui/README.md
+      type: documentation
+    - path: archive/deprecated-providers/xsai/README.md
+      type: documentation
+    - path: examples/README.md
+      type: documentation
+    - path: examples/base/README.md
+      type: documentation
+    - path: examples/github-repo-analyzer/README.md
+      type: documentation
+    - path: examples/github-star-stories/README.md
+      type: documentation
+    - path: examples/next-js-chatbot-starter-template/README.md
+      type: documentation
+    - path: examples/with-a2a-server/README.md
+      type: documentation
+    - path: examples/with-ad-creator/README.md
+      type: documentation
+    - path: examples/with-agent-tool/README.md
+      type: documentation
+    - path: examples/with-airtable/README.md
+      type: documentation
+    - path: examples/with-amazon-bedrock/README.md
+      type: documentation
+    - path: examples/with-anthropic/README.md
+      type: documentation
+    - path: examples/with-assistant-ui/README.md
+      type: documentation
+    - path: examples/with-auth/README.md
+      type: documentation
+    - path: examples/with-cerbos/README.md
+      type: documentation
+    - path: examples/with-chroma/README.md
+      type: documentation
+    - path: examples/with-client-side-tools/README.md
+      type: documentation
+    - path: examples/with-cloudflare-workers/README.md
+      type: documentation
+    - path: examples/with-composio-mcp/README.md
+      type: documentation
+    - path: examples/with-copilotkit/README.md
+      type: documentation
+    - path: examples/with-custom-endpoints/README.md
+      type: documentation
+    - path: examples/with-dynamic-parameters/README.md
+      type: documentation
+    - path: examples/with-dynamic-prompts/README.md
+      type: documentation
+    - path: examples/with-feedback/README.md
+      type: documentation
+    - path: examples/with-google-ai/README.md
+      type: documentation
+    - path: examples/with-google-drive-mcp/README.md
+      type: documentation
+    - path: examples/with-google-vertex-ai/README.md
+      type: documentation
+    - path: examples/with-groq-ai/README.md
+      type: documentation
+    - path: examples/with-guardrails/README.md
+      type: documentation
+    - path: examples/with-hooks/README.md
+      type: documentation
+    - path: examples/with-hugging-face-mcp/README.md
+      type: documentation
+    - path: examples/with-jwt-auth/README.md
+      type: documentation
+    - path: examples/with-lancedb/README.md
+      type: documentation
+    - path: examples/with-langfuse/README.md
+      type: documentation
+    - path: examples/with-live-evals/README.md
+      type: documentation
+    - path: examples/with-mcp-elicitation/README.md
+      type: documentation
+    - path: examples/with-mcp-server/README.md
+      type: documentation
+    - path: examples/with-mcp/README.md
+      type: documentation
+    - path: examples/with-memory-rest-api/README.md
+      type: documentation
+    - path: examples/with-middleware/README.md
+      type: documentation
+    - path: examples/with-nestjs/README.md
+      type: documentation
+    - path: examples/with-netlify-functions/README.md
+      type: documentation
+    - path: examples/with-nextjs-resumable-stream/README.md
+      type: documentation
+    - path: examples/with-nextjs/README.md
+      type: documentation
+    - path: examples/with-nuxt/README.md
+      type: documentation
+    - path: examples/with-offline-evals/README.md
+      type: documentation
+    - path: examples/with-ollama/README.md
+      type: documentation
+    - path: examples/with-peaka-mcp/README.md
+      type: documentation
+    - path: examples/with-pinecone/README.md
+      type: documentation
+    - path: examples/with-planagents/README.md
+      type: documentation
+    - path: examples/with-playwright/README.md
+      type: documentation
+    - path: examples/with-postgres/README.md
+      type: documentation
+    - path: examples/with-qdrant/README.md
+      type: documentation
+    - path: examples/with-rag-chatbot/README.md
+      type: documentation
+    - path: examples/with-recipe-generator/README.md
+      type: documentation
+    - path: examples/with-research-assistant/README.md
+      type: documentation
+    - path: examples/with-resumable-streams/README.md
+      type: documentation
+    - path: examples/with-retries-fallback/README.md
+      type: documentation
+    - path: examples/with-retrieval/README.md
+      type: documentation
+    - path: examples/with-slack/README.md
+      type: documentation
+    - path: examples/with-subagents/README.md
+      type: documentation
+    - path: examples/with-supabase/README.md
+      type: documentation
+    - path: examples/with-tavily-search/README.md
+      type: documentation
+    - path: examples/with-thinking-tool/README.md
+      type: documentation
+    - path: examples/with-tool-routing/README.md
+      type: documentation
+    - path: examples/with-tools/README.md
+      type: documentation
+    - path: examples/with-turso/README.md
+      type: documentation
+    - path: examples/with-vector-search/README.md
+      type: documentation
+    - path: examples/with-vercel-ai/README.md
+      type: documentation
+    - path: examples/with-viteval/README.md
+      type: documentation
+    - path: examples/with-voice-elevenlabs/README.md
+      type: documentation
+    - path: examples/with-voice-openai/README.md
+      type: documentation
+    - path: examples/with-voice-xsai/README.md
+      type: documentation
+    - path: examples/with-voltagent-actions/README.md
+      type: documentation
+    - path: examples/with-voltagent-exporter/README.md
+      type: documentation
+    - path: examples/with-voltagent-managed-memory/README.md
+      type: documentation
+    - path: examples/with-voltops-resumable-streams/README.md
+      type: documentation
+    - path: examples/with-voltops-retrieval/README.md
+      type: documentation
+    - path: examples/with-whatsapp/README.md
+      type: documentation
+    - path: examples/with-workflow-chain/README.md
+      type: documentation
+    - path: examples/with-workflow/README.md
+      type: documentation
+    - path: examples/with-working-memory/README.md
+      type: documentation
+    - path: examples/with-youtube-to-blog/README.md
+      type: documentation
+    - path: examples/with-zapier-mcp/README.md
+      type: documentation
+    - path: packages/a2a-server/README.md
+      type: documentation
+    - path: packages/cli/README.md
+      type: documentation
+    - path: packages/cloudflare-d1/README.md
+      type: documentation
+    - path: packages/core/README.md
+      type: documentation
+    - path: packages/create-voltagent-app/README.md
+      type: documentation
+    - path: packages/docs-mcp/README.md
+      type: documentation
+    - path: packages/internal/README.md
+      type: documentation
+    - path: packages/langfuse-exporter/README.md
+      type: documentation
+    - path: packages/libsql/README.md
+      type: documentation
+    - path: packages/logger/README.md
+      type: documentation
+    - path: packages/mcp-server/README.md
+      type: documentation
+    - path: packages/scorers/README.md
+      type: documentation
+    - path: packages/sdk/README.md
+      type: documentation
+    - path: packages/server-elysia/README.md
+      type: documentation
+    - path: packages/serverless-hono/README.md
+      type: documentation
+    - path: packages/supabase/README.md
+      type: documentation
+    - path: packages/vercel-ai-exporter/README.md
+      type: documentation
+    - path: packages/voice/README.md
+      type: documentation
+    - path: tools/README.md
+      type: documentation
+    - path: tools/core/README.md
+      type: documentation
+    - path: website/README.md
+      type: documentation
+    - path: archive/deprecated-providers/anthropic-ai/package.json
+      type: config
+    - path: archive/deprecated-providers/anthropic-ai/tsconfig.json
+      type: config
+    - path: archive/deprecated-providers/google-ai/package.json
+      type: config
+    - path: archive/deprecated-providers/google-ai/tsconfig.json
+      type: config
+    - path: archive/deprecated-providers/groq-ai/package.json
+      type: config
+    - path: archive/deprecated-providers/groq-ai/tsconfig.json
+      type: config
+    - path: archive/deprecated-providers/vercel-ai/package.json
+      type: config
+    - path: archive/deprecated-providers/vercel-ai/tsconfig.json
+      type: config
+    - path: archive/deprecated-providers/vercel-ui/package.json
+      type: config
+    - path: archive/deprecated-providers/vercel-ui/tsconfig.json
+      type: config
+    - path: archive/deprecated-providers/xsai/package.json
+      type: config
+    - path: archive/deprecated-providers/xsai/tsconfig.json
+      type: config
+    - path: examples/base/package.json
+      type: config
+    - path: examples/base/tsconfig.json
+      type: config
+    - path: examples/github-repo-analyzer/package.json
+      type: config
+    - path: examples/github-repo-analyzer/tsconfig.json
+      type: config
+    - path: examples/github-star-stories/package.json
+      type: config
+    - path: examples/github-star-stories/tsconfig.json
+      type: config
+    - path: examples/next-js-chatbot-starter-template/package.json
+      type: config
+    - path: examples/next-js-chatbot-starter-template/tsconfig.json
+      type: config
+    - path: examples/with-a2a-server/package.json
+      type: config
+    - path: examples/with-a2a-server/tsconfig.json
+      type: config
+    - path: examples/with-ad-creator/Dockerfile
+      type: config
+    - path: examples/with-ad-creator/package.json
+      type: config
+    - path: examples/with-ad-creator/tsconfig.json
+      type: config
+    - path: examples/with-agent-tool/package.json
+      type: config
+    - path: examples/with-agent-tool/tsconfig.json
+      type: config
+    - path: examples/with-airtable/package.json
+      type: config
+    - path: examples/with-airtable/tsconfig.json
+      type: config
+    - path: examples/with-amazon-bedrock/package.json
+      type: config
+    - path: examples/with-amazon-bedrock/tsconfig.json
+      type: config
+    - path: examples/with-anthropic/package.json
+      type: config
+    - path: examples/with-anthropic/tsconfig.json
+      type: config
+    - path: examples/with-assistant-ui/package.json
+      type: config
+    - path: examples/with-assistant-ui/tsconfig.json
+      type: config
+    - path: examples/with-auth/package.json
+      type: config
+    - path: examples/with-auth/tsconfig.json
+      type: config
+    - path: examples/with-cerbos/package.json
+      type: config
+    - path: examples/with-cerbos/tsconfig.json
+      type: config
+    - path: examples/with-chroma/package.json
+      type: config
+    - path: examples/with-chroma/tsconfig.json
+      type: config
+    - path: examples/with-client-side-tools/package.json
+      type: config
+    - path: examples/with-client-side-tools/tsconfig.json
+      type: config
+    - path: examples/with-cloudflare-workers/package.json
+      type: config
+    - path: examples/with-cloudflare-workers/tsconfig.json
+      type: config
+    - path: examples/with-composio-mcp/package.json
+      type: config
+    - path: examples/with-composio-mcp/tsconfig.json
+      type: config
+    - path: examples/with-copilotkit/client/package.json
+      type: config
+    - path: examples/with-copilotkit/client/tsconfig.json
+      type: config
+    - path: examples/with-copilotkit/server/package.json
+      type: config
+    - path: examples/with-copilotkit/server/tsconfig.json
+      type: config
+    - path: examples/with-custom-endpoints/package.json
+      type: config
+    - path: examples/with-custom-endpoints/tsconfig.json
+      type: config
+    - path: examples/with-dynamic-parameters/package.json
+      type: config
+    - path: examples/with-dynamic-parameters/tsconfig.json
+      type: config
+    - path: examples/with-dynamic-prompts/package.json
+      type: config
+    - path: examples/with-dynamic-prompts/tsconfig.json
+      type: config
+    - path: examples/with-feedback/package.json
+      type: config
+    - path: examples/with-feedback/tsconfig.json
+      type: config
+    - path: examples/with-google-ai/package.json
+      type: config
+    - path: examples/with-google-ai/tsconfig.json
+      type: config
+    - path: examples/with-google-drive-mcp/client/package.json
+      type: config
+    - path: examples/with-google-drive-mcp/client/tsconfig.json
+      type: config
+    - path: examples/with-google-drive-mcp/server/package.json
+      type: config
+    - path: examples/with-google-drive-mcp/server/tsconfig.json
+      type: config
+    - path: examples/with-google-vertex-ai/package.json
+      type: config
+    - path: examples/with-google-vertex-ai/tsconfig.json
+      type: config
+    - path: examples/with-groq-ai/package.json
+      type: config
+    - path: examples/with-groq-ai/tsconfig.json
+      type: config
+    - path: examples/with-guardrails/package.json
+      type: config
+    - path: examples/with-guardrails/tsconfig.json
+      type: config
+    - path: examples/with-hooks/package.json
+      type: config
+    - path: examples/with-hooks/tsconfig.json
+      type: config
+    - path: examples/with-hugging-face-mcp/package.json
+      type: config
+    - path: examples/with-hugging-face-mcp/tsconfig.json
+      type: config
+    - path: examples/with-jwt-auth/package.json
+      type: config
+    - path: examples/with-jwt-auth/tsconfig.json
+      type: config
+    - path: examples/with-lancedb/package.json
+      type: config
+    - path: examples/with-lancedb/tsconfig.json
+      type: config
+    - path: examples/with-langfuse/package.json
+      type: config
+    - path: examples/with-langfuse/tsconfig.json
+      type: config
+    - path: examples/with-live-evals/package.json
+      type: config
+    - path: examples/with-live-evals/tsconfig.json
+      type: config
+    - path: examples/with-mcp-elicitation/go-server/go.mod
+      type: config
+    - path: examples/with-mcp-elicitation/package.json
+      type: config
+    - path: examples/with-mcp-elicitation/tsconfig.json
+      type: config
+    - path: examples/with-mcp-server/package.json
+      type: config
+    - path: examples/with-mcp-server/tsconfig.json
+      type: config
+    - path: examples/with-mcp/package.json
+      type: config
+    - path: examples/with-mcp/tsconfig.json
+      type: config
+    - path: examples/with-memory-rest-api/package.json
+      type: config
+    - path: examples/with-memory-rest-api/tsconfig.json
+      type: config
+    - path: examples/with-middleware/package.json
+      type: config
+    - path: examples/with-middleware/tsconfig.json
+      type: config
+    - path: examples/with-nestjs/package.json
+      type: config
+    - path: examples/with-nestjs/tsconfig.json
+      type: config
+    - path: examples/with-netlify-functions/package.json
+      type: config
+    - path: examples/with-netlify-functions/tsconfig.json
+      type: config
+    - path: examples/with-nextjs-resumable-stream/package.json
+      type: config
+    - path: examples/with-nextjs-resumable-stream/tsconfig.json
+      type: config
+    - path: examples/with-nextjs/package.json
+      type: config
+    - path: examples/with-nextjs/tsconfig.json
+      type: config
+    - path: examples/with-nuxt/package.json
+      type: config
+    - path: examples/with-nuxt/tsconfig.json
+      type: config
+    - path: examples/with-offline-evals/package.json
+      type: config
+    - path: examples/with-offline-evals/tsconfig.json
+      type: config
+    - path: examples/with-ollama/package.json
+      type: config
+    - path: examples/with-ollama/tsconfig.json
+      type: config
+    - path: examples/with-peaka-mcp/package.json
+      type: config
+    - path: examples/with-peaka-mcp/tsconfig.json
+      type: config
+    - path: examples/with-pinecone/package.json
+      type: config
+    - path: examples/with-pinecone/tsconfig.json
+      type: config
+    - path: examples/with-planagents/package.json
+      type: config
+    - path: examples/with-planagents/tsconfig.json
+      type: config
+    - path: examples/with-playwright/package.json
+      type: config
+    - path: examples/with-playwright/tsconfig.json
+      type: config
+    - path: examples/with-postgres/package.json
+      type: config
+    - path: examples/with-postgres/tsconfig.json
+      type: config
+    - path: examples/with-qdrant/package.json
+      type: config
+    - path: examples/with-qdrant/tsconfig.json
+      type: config
+    - path: examples/with-rag-chatbot/package.json
+      type: config
+    - path: examples/with-rag-chatbot/tsconfig.json
+      type: config
+    - path: examples/with-recipe-generator/package.json
+      type: config
+    - path: examples/with-recipe-generator/tsconfig.json
+      type: config
+    - path: examples/with-research-assistant/package.json
+      type: config
+    - path: examples/with-research-assistant/tsconfig.json
+      type: config
+    - path: examples/with-resumable-streams/package.json
+      type: config
+    - path: examples/with-resumable-streams/tsconfig.json
+      type: config
+    - path: examples/with-retries-fallback/package.json
+      type: config
+    - path: examples/with-retries-fallback/tsconfig.json
+      type: config
+    - path: examples/with-retrieval/package.json
+      type: config
+    - path: examples/with-retrieval/tsconfig.json
+      type: config
+    - path: examples/with-slack/package.json
+      type: config
+    - path: examples/with-slack/tsconfig.json
+      type: config
+    - path: examples/with-subagents/package.json
+      type: config
+    - path: examples/with-subagents/tsconfig.json
+      type: config
+    - path: examples/with-supabase/package.json
+      type: config
+    - path: examples/with-supabase/tsconfig.json
+      type: config
+    - path: examples/with-tavily-search/package.json
+      type: config
+    - path: examples/with-tavily-search/tsconfig.json
+      type: config
+    - path: examples/with-thinking-tool/package.json
+      type: config
+    - path: examples/with-thinking-tool/tsconfig.json
+      type: config
+    - path: examples/with-tool-routing/package.json
+      type: config
+    - path: examples/with-tool-routing/tsconfig.json
+      type: config
+    - path: examples/with-tools/package.json
+      type: config
+    - path: examples/with-tools/tsconfig.json
+      type: config
+    - path: examples/with-turso/package.json
+      type: config
+    - path: examples/with-turso/tsconfig.json
+      type: config
+    - path: examples/with-vector-search/package.json
+      type: config
+    - path: examples/with-vector-search/tsconfig.json
+      type: config
+    - path: examples/with-vercel-ai/package.json
+      type: config
+    - path: examples/with-vercel-ai/tsconfig.json
+      type: config
+    - path: examples/with-viteval/package.json
+      type: config
+    - path: examples/with-viteval/tsconfig.json
+      type: config
+    - path: examples/with-voice-elevenlabs/package.json
+      type: config
+    - path: examples/with-voice-elevenlabs/tsconfig.json
+      type: config
+    - path: examples/with-voice-openai/package.json
+      type: config
+    - path: examples/with-voice-openai/tsconfig.json
+      type: config
+    - path: examples/with-voice-xsai/package.json
+      type: config
+    - path: examples/with-voice-xsai/tsconfig.json
+      type: config
+    - path: examples/with-voltagent-actions/package.json
+      type: config
+    - path: examples/with-voltagent-actions/tsconfig.json
+      type: config
+    - path: examples/with-voltagent-exporter/package.json
+      type: config
+    - path: examples/with-voltagent-exporter/tsconfig.json
+      type: config
+    - path: examples/with-voltagent-managed-memory/package.json
+      type: config
+    - path: examples/with-voltagent-managed-memory/tsconfig.json
+      type: config
+    - path: examples/with-voltops-resumable-streams/package.json
+      type: config
+    - path: examples/with-voltops-resumable-streams/tsconfig.json
+      type: config
+    - path: examples/with-voltops-retrieval/package.json
+      type: config
+    - path: examples/with-voltops-retrieval/tsconfig.json
+      type: config
+    - path: examples/with-whatsapp/Dockerfile
+      type: config
+    - path: examples/with-whatsapp/package.json
+      type: config
+    - path: examples/with-whatsapp/tsconfig.json
+      type: config
+    - path: examples/with-workflow-chain/package.json
+      type: config
+    - path: examples/with-workflow-chain/tsconfig.json
+      type: config
+    - path: examples/with-workflow/package.json
+      type: config
+    - path: examples/with-workflow/tsconfig.json
+      type: config
+    - path: examples/with-working-memory/package.json
+      type: config
+    - path: examples/with-working-memory/tsconfig.json
+      type: config
+    - path: examples/with-youtube-to-blog/package.json
+      type: config
+    - path: examples/with-youtube-to-blog/tsconfig.json
+      type: config
+    - path: examples/with-zapier-mcp/package.json
+      type: config
+    - path: examples/with-zapier-mcp/tsconfig.json
+      type: config
+    - path: package.json
+      type: config
+    - path: packages/a2a-server/package.json
+      type: config
+    - path: packages/a2a-server/tsconfig.json
+      type: config
+    - path: packages/ag-ui/package.json
+      type: config
+    - path: packages/ag-ui/tsconfig.json
+      type: config
+    - path: packages/cli/package.json
+      type: config
+    - path: packages/cli/tsconfig.json
+      type: config
+    - path: packages/cloudflare-d1/package.json
+      type: config
+    - path: packages/cloudflare-d1/tsconfig.json
+      type: config
+    - path: packages/core/package.json
+      type: config
+    - path: packages/core/tsconfig.json
+      type: config
+    - path: packages/create-voltagent-app/package.json
+      type: config
+    - path: packages/create-voltagent-app/tsconfig.json
+      type: config
+    - path: packages/docs-mcp/package.json
+      type: config
+    - path: packages/docs-mcp/tsconfig.json
+      type: config
+    - path: packages/evals/package.json
+      type: config
+    - path: packages/evals/tsconfig.json
+      type: config
+    - path: packages/internal/package.json
+      type: config
+    - path: packages/internal/tsconfig.json
+      type: config
+    - path: packages/langfuse-exporter/package.json
+      type: config
+    - path: packages/langfuse-exporter/tsconfig.json
+      type: config
+    - path: packages/libsql/package.json
+      type: config
+    - path: packages/libsql/tsconfig.json
+      type: config
+    - path: packages/logger/package.json
+      type: config
+    - path: packages/logger/tsconfig.json
+      type: config
+    - path: packages/mcp-server/package.json
+      type: config
+    - path: packages/mcp-server/tsconfig.json
+      type: config
+    - path: packages/postgres/package.json
+      type: config
+    - path: packages/postgres/tsconfig.json
+      type: config
+    - path: packages/rag/package.json
+      type: config
+    - path: packages/rag/tsconfig.json
+      type: config
+    - path: packages/resumable-streams/package.json
+      type: config
+    - path: packages/resumable-streams/tsconfig.json
+      type: config
+    - path: packages/scorers/package.json
+      type: config
+    - path: packages/scorers/tsconfig.json
+      type: config
+    - path: packages/sdk/package.json
+      type: config
+    - path: packages/sdk/tsconfig.json
+      type: config
+    - path: packages/server-core/package.json
+      type: config
+    - path: packages/server-core/tsconfig.json
+      type: config
+    - path: packages/server-elysia/example/package.json
+      type: config
+    - path: packages/server-elysia/example/tsconfig.json
+      type: config
+    - path: packages/server-elysia/package.json
+      type: config
+    - path: packages/server-elysia/tsconfig.json
+      type: config
+    - path: packages/server-hono/package.json
+      type: config
+    - path: packages/server-hono/tsconfig.json
+      type: config
+    - path: packages/serverless-hono/package.json
+      type: config
+    - path: packages/serverless-hono/tsconfig.json
+      type: config
+    - path: packages/supabase/package.json
+      type: config
+    - path: packages/supabase/tsconfig.json
+      type: config
+    - path: packages/vercel-ai-exporter/package.json
+      type: config
+    - path: packages/vercel-ai-exporter/tsconfig.json
+      type: config
+    - path: packages/voice/package.json
+      type: config
+    - path: packages/voice/tsconfig.json
+      type: config
+    - path: packages/voltagent-memory/package.json
+      type: config
+    - path: packages/voltagent-memory/tsconfig.json
+      type: config
+    - path: tools/core/package.json
+      type: config
+    - path: tools/core/src/generators/example/files/tsconfig.json
+      type: config
+    - path: tools/core/src/generators/package/files/tsconfig.json
+      type: config
+    - path: tools/core/src/generators/provider/files/tsconfig.json
+      type: config
+    - path: tools/core/tsconfig.json
+      type: config
+    - path: tsconfig.json
+      type: config
+    - path: website/package.json
+      type: config
+    - path: website/tsconfig.json
+      type: config
+  key_directories:
+    - path: docs/
+      purpose: documentation
+    - path: examples/
+      purpose: examples
+    - path: .github/
+      purpose: ci_cd
+    - path: packages/
+      purpose: packages
+    - path: scripts/
+      purpose: build_scripts
+    - path: tools/
+      purpose: tooling
+  file_count: 3535
+  truncated: false
+
+dependencies:
+  runtime: []
+  dev:
+    - name: @arethetypeswrong/cli
+      version: ^0.17.4
+    - name: @biomejs/biome
+      version: ^1.9.4
+    - name: @changesets/changelog-github
+      version: ^0.5.1
+    - name: @changesets/cli
+      version: ^2.28.1
+    - name: @commitlint/cli
+      version: ^18.2.0
+    - name: @commitlint/config-conventional
+      version: ^18.2.0
+    - name: @esbuild-plugins/node-resolve
+      version: ^0.2.2
+    - name: @nx/devkit
+      version: ^21.2.0
+    - name: @nx/js
+      version: 20.4.6
+    - name: @nx/plugin
+      version: 20.4.6
+    - name: @nx/vite
+      version: 20.4.6
+    - name: @nx/web
+      version: 20.4.6
+    - name: @swc-node/register
+      version: ~1.9.1
+    - name: @swc/cli
+      version: ~0.3.12
+    - name: @swc/core
+      version: ~1.5.7
+    - name: @swc/helpers
+      version: ~0.5.11
+    - name: @types/node
+      version: ^24.2.1
+    - name: @vitest/coverage-v8
+      version: ^3.2.4
+    - name: @vitest/ui
+      version: ^1.3.1
+    - name: husky
+      version: ^8.0.3
+    - name: jsdom
+      version: ~22.1.0
+    - name: lerna
+      version: ^7.4.2
+    - name: lint-staged
+      version: ^15.4.3
+    - name: nx
+      version: ^20.4.6
+    - name: prettier
+      version: ^3.5.3
+    - name: publint
+      version: ^0.3.8
+    - name: rimraf
+      version: ^5.0.5
+    - name: syncpack
+      version: ^13.0.2
+    - name: tslib
+      version: ^2.3.0
+    - name: tsup
+      version: ^8.5.0
+    - name: typescript
+      version: ^5.8.2
+    - name: vite
+      version: ^7.2.7
+    - name: vitest
+      version: ^3.2.4
+
+insights:
+  patterns: []
+  notable:
+    - Uses TypeScript
+    - Popular repository (5398 stars)
+    - Substantial codebase (2718 files)
+    - Comprehensive documentation
+    - MIT licensed
+  potential_learnings:
+    - Monorepo or multi-package architecture
+    - Documentation organization approach
+    - GitHub Actions workflow patterns
+    - Popular repo patterns worth studying
+    - Architecture documentation available
+
+rate_limit:
+  calls_used: 5
+  calls_remaining: 4965

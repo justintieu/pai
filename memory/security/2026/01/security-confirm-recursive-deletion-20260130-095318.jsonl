@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-30T17:53:18.113Z",
+  "session_id": "8903ffc1-0221-4176-81d6-68c6655a80f3",
+  "event_type": "confirm",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "cd /tmp && rm -rf pptx_extract && mkdir pptx_extract && cd pptx_extract && unzip -q \"/Users/justintieu/Documents/github/kasanariba-ai/Claude_Context_Management.pptx\" 2>&1 | head -20",
+  "reason": "Recursive deletion",
+  "action_taken": "Prompted user for confirmation"
+}

@@ -94,6 +94,7 @@ PAI acts on your behalf with guardrails.
 - [ ] Email (IMAP + SMTP)
 - [ ] Slack integration
 - [ ] Calendar integration
+  - [ ] Mirror event detection (dedupe blocking events across calendars)
 - [ ] Trust levels (auto/approve/notify/ignore)
 
 ### Phase 6: IoT / Home

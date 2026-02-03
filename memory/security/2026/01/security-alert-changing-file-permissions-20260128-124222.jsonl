@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-28T20:42:22.032Z",
+  "session_id": "0cac7806-a759-403d-8386-49c39161e6f1",
+  "event_type": "alert",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "chmod +x ~/.claude/bin/archive-usage.sh ~/.claude/bin/claude-usage.mjs",
+  "reason": "Changing file permissions",
+  "action_taken": "Logged alert, allowed execution"
+}

@@ -1,0 +1,589 @@
+investigation:
+  repo: microsoft/agent-framework
+  url: "https://github.com/microsoft/agent-framework"
+  date: "2026-02-02T04:26:50.102Z"
+  mode: quick_scan
+
+metadata:
+  description: A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.
+  language: Python
+  topics:
+    - agent-framework
+    - agentic-ai
+    - agents
+    - ai
+    - dotnet
+    - multi-agent
+    - orchestration
+    - python
+    - sdk
+    - workflows
+  stars: 6897
+  forks: 1094
+  size_kb: 54599
+  last_push: "2026-02-02T04:23:57Z"
+  created: "2025-04-28T19:40:42Z"
+  license: MIT
+
+structure:
+  entry_points:
+    - path: README.md
+      type: documentation
+    - path: agent-samples/README.md
+      type: documentation
+    - path: docs/decisions/README.md
+      type: documentation
+    - path: dotnet/README.md
+      type: documentation
+    - path: dotnet/samples/A2AClientServer/A2AClient/README.md
+      type: documentation
+    - path: dotnet/samples/A2AClientServer/README.md
+      type: documentation
+    - path: dotnet/samples/AGUIClientServer/AGUIClient/README.md
+      type: documentation
+    - path: dotnet/samples/AGUIClientServer/README.md
+      type: documentation
+    - path: dotnet/samples/AGUIWebChat/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/01_SingleAgent/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/02_AgentOrchestration_Chaining/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/03_AgentOrchestration_Concurrency/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/04_AgentOrchestration_Conditionals/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/05_AgentOrchestration_HITL/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/06_LongRunningTools/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/07_AgentAsMcpTool/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/08_ReliableStreaming/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/AzureFunctions/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/01_SingleAgent/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/02_AgentOrchestration_Chaining/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/03_AgentOrchestration_Concurrency/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/04_AgentOrchestration_Conditionals/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/05_AgentOrchestration_HITL/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/06_LongRunningTools/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/07_ReliableStreaming/README.md
+      type: documentation
+    - path: dotnet/samples/Durable/Agents/ConsoleApps/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/A2A/A2AAgent_AsFunctionTools/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/A2A/A2AAgent_PollingForTaskCompletion/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/A2A/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AGUI/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentOpenTelemetry/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_A2A/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_Anthropic/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_AzureAIAgentsPersistent/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_AzureAIProject/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_AzureFoundryModel/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_AzureOpenAIChatCompletion/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_AzureOpenAIResponses/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_CustomImplementation/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_GitHubCopilot/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_GoogleGemini/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_ONNX/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_Ollama/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_OpenAIAssistants/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_OpenAIChatCompletion/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/Agent_With_OpenAIResponses/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentProviders/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithAnthropic/Agent_Anthropic_Step01_Running/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithAnthropic/Agent_Anthropic_Step02_Reasoning/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithAnthropic/Agent_Anthropic_Step03_UsingFunctionTools/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithAnthropic/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithMemory/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithOpenAI/Agent_OpenAI_Step03_CreateFromChatClient/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithOpenAI/Agent_OpenAI_Step04_CreateFromOpenAIResponseClient/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithOpenAI/Agent_OpenAI_Step05_Conversation/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithOpenAI/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithRAG/AgentWithRAG_Step02_CustomVectorStoreRAG/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/AgentWithRAG/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step10_AsMcpTool/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step11_UsingImages/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step13_BackgroundResponsesWithToolsAndPersistence/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step14_Middleware/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step17_BackgroundResponses/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/Agent_Step18_DeepResearch/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Agents/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/DevUI/DevUI_Step01_BasicUsage/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/DevUI/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step01.1_Basics/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step01.2_Running/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step02_MultiturnConversation/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step03_UsingFunctionTools/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step04_UsingFunctionToolsWithApprovals/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step05_StructuredOutput/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step06_PersistedConversations/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step07_Observability/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step08_DependencyInjection/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step09_UsingMcpClientAsTools/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step10_UsingImages/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step11_AsFunctionTool/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step12_Middleware/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step13_Plugins/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step14_CodeInterpreter/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/FoundryAgents_Step15_ComputerUse/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/FoundryAgents/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/ModelContextProtocol/Agent_MCP_Server/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/ModelContextProtocol/Agent_MCP_Server_Auth/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/ModelContextProtocol/FoundryAgent_Hosted_MCP/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/ModelContextProtocol/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/ModelContextProtocol/ResponseAgent_Hosted_MCP/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Workflows/Agents/GroupChatToolApproval/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Workflows/Declarative/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Workflows/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Workflows/Visualization/README.md
+      type: documentation
+    - path: dotnet/samples/GettingStarted/Workflows/_Foundational/07_MixedWorkflowAgentsAndExecutors/README.md
+      type: documentation
+    - path: dotnet/samples/HostedAgents/AgentWithHostedMCP/README.md
+      type: documentation
+    - path: dotnet/samples/HostedAgents/AgentWithTextSearchRag/README.md
+      type: documentation
+    - path: dotnet/samples/HostedAgents/AgentsInWorkflows/README.md
+      type: documentation
+    - path: dotnet/samples/M365Agent/README.md
+      type: documentation
+    - path: dotnet/samples/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/CallerAttributes/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/CompilerFeatureRequiredAttribute/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/DiagnosticAttributes/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/DiagnosticClasses/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/ExperimentalAttribute/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/IsExternalInit/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/RequiredMemberAttribute/README.md
+      type: documentation
+    - path: dotnet/src/LegacySupport/TrimAttributes/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.DevUI/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.DurableTask/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.DurableTask/State/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.Hosting.AzureFunctions/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.Purview/README.md
+      type: documentation
+    - path: dotnet/src/Microsoft.Agents.AI.Workflows.Declarative/README.md
+      type: documentation
+    - path: dotnet/src/Shared/CodeTests/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Demos/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Foundry/Agents/README.md
+      type: documentation
+    - path: dotnet/src/Shared/IntegrationTests/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Samples/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Throw/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Workflows/Execution/README.md
+      type: documentation
+    - path: dotnet/src/Shared/Workflows/Settings/README.md
+      type: documentation
+    - path: python/README.md
+      type: documentation
+    - path: python/packages/a2a/README.md
+      type: documentation
+    - path: python/packages/ag-ui/README.md
+      type: documentation
+    - path: python/packages/ag-ui/agent_framework_ag_ui_examples/README.md
+      type: documentation
+    - path: python/packages/ag-ui/getting_started/README.md
+      type: documentation
+    - path: python/packages/anthropic/README.md
+      type: documentation
+    - path: python/packages/azure-ai-search/README.md
+      type: documentation
+    - path: python/packages/azure-ai/README.md
+      type: documentation
+    - path: python/packages/azurefunctions/README.md
+      type: documentation
+    - path: python/packages/azurefunctions/tests/integration_tests/README.md
+      type: documentation
+    - path: python/packages/bedrock/README.md
+      type: documentation
+    - path: python/packages/chatkit/README.md
+      type: documentation
+    - path: python/packages/claude/README.md
+      type: documentation
+    - path: python/packages/copilotstudio/README.md
+      type: documentation
+    - path: python/packages/core/README.md
+      type: documentation
+    - path: python/packages/core/agent_framework/_workflows/README.md
+      type: documentation
+    - path: python/packages/declarative/README.md
+      type: documentation
+    - path: python/packages/devui/README.md
+      type: documentation
+    - path: python/packages/devui/frontend/README.md
+      type: documentation
+    - path: python/packages/devui/samples/README.md
+      type: documentation
+    - path: python/packages/durabletask/README.md
+      type: documentation
+    - path: python/packages/durabletask/tests/integration_tests/README.md
+      type: documentation
+    - path: python/packages/foundry_local/README.md
+      type: documentation
+    - path: python/packages/github_copilot/README.md
+      type: documentation
+    - path: python/packages/lab/README.md
+      type: documentation
+    - path: python/packages/lab/gaia/README.md
+      type: documentation
+    - path: python/packages/lab/lightning/README.md
+      type: documentation
+    - path: python/packages/lab/tau2/README.md
+      type: documentation
+    - path: python/packages/mem0/README.md
+      type: documentation
+    - path: python/packages/ollama/README.md
+      type: documentation
+    - path: python/packages/purview/README.md
+      type: documentation
+    - path: python/packages/redis/README.md
+      type: documentation
+    - path: python/samples/README.md
+      type: documentation
+    - path: python/samples/autogen-migration/README.md
+      type: documentation
+    - path: python/samples/demos/chatkit-integration/README.md
+      type: documentation
+    - path: python/samples/demos/m365-agent/README.md
+      type: documentation
+    - path: python/samples/demos/workflow_evaluation/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/a2a/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/anthropic/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/azure_ai/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/azure_ai_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/azure_openai/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/copilotstudio/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/custom/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/github_copilot/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/ollama/README.md
+      type: documentation
+    - path: python/samples/getting_started/agents/openai/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/01_single_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/02_multi_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/03_reliable_streaming/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/04_single_agent_orchestration_chaining/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/05_multi_agent_orchestration_concurrency/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/06_multi_agent_orchestration_conditionals/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/07_single_agent_orchestration_hitl/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/08_mcp_server/README.md
+      type: documentation
+    - path: python/samples/getting_started/azure_functions/README.md
+      type: documentation
+    - path: python/samples/getting_started/chat_client/README.md
+      type: documentation
+    - path: python/samples/getting_started/context_providers/README.md
+      type: documentation
+    - path: python/samples/getting_started/context_providers/azure_ai_search/README.md
+      type: documentation
+    - path: python/samples/getting_started/context_providers/mem0/README.md
+      type: documentation
+    - path: python/samples/getting_started/context_providers/redis/README.md
+      type: documentation
+    - path: python/samples/getting_started/declarative/README.md
+      type: documentation
+    - path: python/samples/getting_started/devui/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/01_single_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/02_multi_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/03_single_agent_streaming/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/04_single_agent_orchestration_chaining/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/05_multi_agent_orchestration_concurrency/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/06_multi_agent_orchestration_conditionals/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/07_single_agent_orchestration_hitl/README.md
+      type: documentation
+    - path: python/samples/getting_started/durabletask/README.md
+      type: documentation
+    - path: python/samples/getting_started/evaluation/red_teaming/README.md
+      type: documentation
+    - path: python/samples/getting_started/evaluation/self_reflection/README.md
+      type: documentation
+    - path: python/samples/getting_started/mcp/README.md
+      type: documentation
+    - path: python/samples/getting_started/middleware/README.md
+      type: documentation
+    - path: python/samples/getting_started/multimodal_input/README.md
+      type: documentation
+    - path: python/samples/getting_started/observability/README.md
+      type: documentation
+    - path: python/samples/getting_started/purview_agent/README.md
+      type: documentation
+    - path: python/samples/getting_started/threads/README.md
+      type: documentation
+    - path: python/samples/getting_started/tools/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/conditional_workflow/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/customer_support/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/deep_research/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/function_tools/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/human_in_loop/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/marketing/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/simple_workflow/README.md
+      type: documentation
+    - path: python/samples/getting_started/workflows/declarative/student_teacher/README.md
+      type: documentation
+    - path: python/samples/semantic-kernel-migration/README.md
+      type: documentation
+    - path: workflow-samples/README.md
+      type: documentation
+    - path: dotnet/samples/HostedAgents/AgentWithHostedMCP/Dockerfile
+      type: config
+    - path: dotnet/samples/HostedAgents/AgentWithTextSearchRag/Dockerfile
+      type: config
+    - path: dotnet/samples/HostedAgents/AgentsInWorkflows/Dockerfile
+      type: config
+    - path: python/packages/a2a/pyproject.toml
+      type: config
+    - path: python/packages/ag-ui/pyproject.toml
+      type: config
+    - path: python/packages/anthropic/pyproject.toml
+      type: config
+    - path: python/packages/azure-ai-search/pyproject.toml
+      type: config
+    - path: python/packages/azure-ai/pyproject.toml
+      type: config
+    - path: python/packages/azurefunctions/pyproject.toml
+      type: config
+    - path: python/packages/bedrock/pyproject.toml
+      type: config
+    - path: python/packages/chatkit/pyproject.toml
+      type: config
+    - path: python/packages/claude/pyproject.toml
+      type: config
+    - path: python/packages/copilotstudio/pyproject.toml
+      type: config
+    - path: python/packages/core/pyproject.toml
+      type: config
+    - path: python/packages/declarative/pyproject.toml
+      type: config
+    - path: python/packages/devui/frontend/package.json
+      type: config
+    - path: python/packages/devui/frontend/tsconfig.json
+      type: config
+    - path: python/packages/devui/pyproject.toml
+      type: config
+    - path: python/packages/durabletask/pyproject.toml
+      type: config
+    - path: python/packages/foundry_local/pyproject.toml
+      type: config
+    - path: python/packages/github_copilot/pyproject.toml
+      type: config
+    - path: python/packages/lab/pyproject.toml
+      type: config
+    - path: python/packages/mem0/pyproject.toml
+      type: config
+    - path: python/packages/ollama/pyproject.toml
+      type: config
+    - path: python/packages/purview/pyproject.toml
+      type: config
+    - path: python/packages/redis/pyproject.toml
+      type: config
+    - path: python/pyproject.toml
+      type: config
+    - path: python/samples/demos/chatkit-integration/frontend/package.json
+      type: config
+    - path: python/samples/demos/chatkit-integration/frontend/tsconfig.json
+      type: config
+    - path: python/samples/demos/hosted_agents/agent_with_hosted_mcp/Dockerfile
+      type: config
+    - path: python/samples/demos/hosted_agents/agent_with_hosted_mcp/requirements.txt
+      type: config
+    - path: python/samples/demos/hosted_agents/agent_with_text_search_rag/Dockerfile
+      type: config
+    - path: python/samples/demos/hosted_agents/agent_with_text_search_rag/requirements.txt
+      type: config
+    - path: python/samples/demos/hosted_agents/agents_in_workflow/Dockerfile
+      type: config
+    - path: python/samples/demos/hosted_agents/agents_in_workflow/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/01_single_agent/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/02_multi_agent/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/03_reliable_streaming/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/04_single_agent_orchestration_chaining/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/05_multi_agent_orchestration_concurrency/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/06_multi_agent_orchestration_conditionals/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/07_single_agent_orchestration_hitl/requirements.txt
+      type: config
+    - path: python/samples/getting_started/azure_functions/08_mcp_server/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/01_single_agent/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/02_multi_agent/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/03_single_agent_streaming/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/04_single_agent_orchestration_chaining/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/05_multi_agent_orchestration_concurrency/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/06_multi_agent_orchestration_conditionals/requirements.txt
+      type: config
+    - path: python/samples/getting_started/durabletask/07_single_agent_orchestration_hitl/requirements.txt
+      type: config
+  key_directories:
+    - path: docs/
+      purpose: documentation
+    - path: .github/
+      purpose: ci_cd
+  file_count: 4036
+  truncated: false
+
+dependencies: null
+
+insights:
+  patterns: []
+  notable:
+    - Uses Python
+    - Popular repository (6897 stars)
+    - Substantial codebase (3298 files)
+    - Has contribution guidelines
+    - MIT licensed
+  potential_learnings:
+    - Documentation organization approach
+    - GitHub Actions workflow patterns
+    - Popular repo patterns worth studying
+    - Architecture documentation available
+    - API design patterns
+
+rate_limit:
+  calls_used: 4
+  calls_remaining: 4939

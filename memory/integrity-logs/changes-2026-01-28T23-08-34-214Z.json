@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-01-28T23:08:34.214Z",
+  "session_id": "1883970f-1b43-4aaa-bfb1-5ba6e5104bcc",
+  "title": "PAI Hook System Updates",
+  "significance": "major",
+  "change_type": "hook_update",
+  "changes": [
+    {
+      "tool": "Edit",
+      "path": "hooks/src/tools/TranscriptParser.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "hooks/src/handlers/learning-capture.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/StopOrchestrator.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "hooks/src/lib/yaml.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/handlers/capture.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/handlers/voice.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/WorkCompletionLearning.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/SessionSummary.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/handlers/SystemIntegrity.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/lib/change-detection.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/Gateway.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Write",
+      "path": "rules/coding.md",
+      "category": "documentation",
+      "isPhilosophical": false,
+      "isStructural": false
+    },
+    {
+      "tool": "Edit",
+      "path": "hooks/src/hooks/SecurityValidator.hook.ts",
+      "category": "hook",
+      "isPhilosophical": false,
+      "isStructural": false
+    }
+  ]
+}

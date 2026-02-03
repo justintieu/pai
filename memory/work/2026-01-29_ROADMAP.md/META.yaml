@@ -1,0 +1,28 @@
+id: 2026-01-29_ROADMAP.md
+title: Work on ROADMAP.md
+created_at: "2026-01-29T09:00:34-08:00"
+completed_at: "2026-01-29T09:02:21-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: cc8d3431-4b38-47dd-9ee5-53e37967aec1
+lineage:
+  tools_used:
+    - Write
+    - Edit
+  files_changed:
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/README.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-framework/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-runtime/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/application-services/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/core-infrastructure/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/data-adapters/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-mcp-sfdc/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/salesforce/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/data-schema-migration/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/external-connectors/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-email-agent/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-profet/index.md
+    - /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/provus-ai-web/index.md
+    - /Users/justintieu/Documents/github/kasanariba-ai/.planning/PROJECT.md
+    - /Users/justintieu/Documents/github/kasanariba-ai/.planning/REQUIREMENTS-M2.md
+  agents_spawned: []

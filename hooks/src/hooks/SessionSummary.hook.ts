@@ -27,11 +27,12 @@ import { writeFileSync, existsSync, readFileSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { getISOTimestamp } from '../lib/time';
 import { getPaiDir } from '../lib/paths';
+import { readYamlFile } from '../lib/yaml';
 
 const BASE_DIR = getPaiDir();
 const MEMORY_DIR = join(BASE_DIR, 'memory');
 const STATE_DIR = join(MEMORY_DIR, 'state');
-const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.json');
+const CURRENT_WORK_FILE = join(STATE_DIR, 'current-work.yaml');
 const WORK_DIR = join(MEMORY_DIR, 'work');
 
 interface CurrentWork {
@@ -46,14 +47,11 @@ interface CurrentWork {
  */
 function clearSessionWork(): void {
   try {
-    if (!existsSync(CURRENT_WORK_FILE)) {
+    const currentWork = readYamlFile<CurrentWork>(CURRENT_WORK_FILE);
+    if (!currentWork) {
       console.error('[SessionSummary] No current work to complete');
       return;
     }
-
-    // Read current work state
-    const content = readFileSync(CURRENT_WORK_FILE, 'utf-8');
-    const currentWork: CurrentWork = JSON.parse(content);
 
     // Mark work directory as COMPLETED
     if (currentWork.work_dir) {

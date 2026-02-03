@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-01-29T13:00:13.465Z",
+  "session_id": "a88f5848-2471-4b29-98b1-75edacb61973",
+  "event_type": "alert",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "mkdir -p ~/.pai/secrets && chmod 700 ~/.pai/secrets",
+  "reason": "Changing file permissions",
+  "action_taken": "Logged alert, allowed execution"
+}

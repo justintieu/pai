@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-03T21:56:18.341Z",
+  "session_id": "741f4254-f9dc-4783-a957-297381c09c36",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-framework \\\n  /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/agent-runtime \\\n  /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/application-services \\\n  /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/core-infrastructure \\\n  /Users/justintieu/Documents/github/provus-ai-assistant/.claude/rules/data-adapters \\\n  /Users/justintieu/Documents/github/provus-a",
+  "reason": "Recursive deletion of root directory",
+  "action_taken": "Hard block - exit 2"
+}

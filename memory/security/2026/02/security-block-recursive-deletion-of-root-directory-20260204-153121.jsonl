@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-04T23:31:21.070Z",
+  "session_id": "415cb977-afc3-4210-8922-cc20b0d0cec3",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "rm -rf /Users/justintieu/.claude/skills/pipeline-monitor/references /Users/justintieu/.claude/skills/pipeline-monitor/assets /Users/justintieu/.claude/skills/pipeline-monitor/scripts/example.py",
+  "reason": "Recursive deletion of root directory",
+  "action_taken": "Hard block - exit 2"
+}

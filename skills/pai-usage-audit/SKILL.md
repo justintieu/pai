@@ -36,16 +36,27 @@ Run the audit script directly:
 
 ## Known Differences from ccusage
 
+### Cost Comparison (as of 2026-02-03)
+| Tool | Total Cost | Output Tokens | Strategy |
+|------|------------|---------------|----------|
+| Our tool | ~$1,748 | 5.27M | LAST entry (correct) |
+| ccusage | ~$1,674 | 971K | FIRST entry (under-counts) |
+
 ### Deduplication Strategy
-- **Our tool**: Uses LAST entry per `messageId` (correct - captures final token counts)
-- **ccusage**: Uses FIRST entry per `messageId:requestId` (bug - captures incomplete streaming events)
+- **Our tool**: Uses LAST entry per `messageId` (correct - captures final cumulative counts)
+- **ccusage**: Uses FIRST entry per `messageId:requestId` (under-counts - captures incomplete `message_start` data)
 
-### Why Our Output Tokens Are Higher
-Streaming creates multiple JSONL entries per message:
-1. First entries have `stop_reason=null` with partial tokens (1-5)
-2. Last entry has `stop_reason="tool_use"|"end_turn"` with actual tokens (100-20,000)
+### Why Our Output Tokens Are Higher (~5x)
+Claude Code writes multiple JSONL entries per message during streaming:
+1. First entries: `message_start` event with partial tokens (1-5), `stop_reason=null`
+2. Last entry: `message_delta` event with cumulative tokens (actual total), `stop_reason` set
 
-ccusage takes first entry = under-counts. Our tool takes last entry = accurate.
+Per Anthropic docs, `message_delta` usage is **cumulative** - the LAST entry is correct.
+
+### Pricing Notes
+- Both tools use LiteLLM pricing (Opus $5/$25, Sonnet $3/$15, Haiku $1/$5 per M)
+- Tiered pricing (above 200k) is NOT applied per-token-type
+- Cache tokens dominate costs (~$1,400 of ~$1,700 total)
 
 ## Instructions
 
@@ -156,12 +167,56 @@ const MODEL_PRICING = {
 
 Tiered rates are typically 2x base for input/cache, 1.5x for output.
 
-## Reference: ccusage Bug Analysis (2026-01-29)
+## Reference: Investigation Findings (2026-02-03)
 
-Investigation showed ccusage uses `messageId:requestId` as dedup key and keeps FIRST entry. For streaming messages:
-- First entry: `output_tokens=3`, `stop_reason=null`
-- Last entry: `output_tokens=19688`, `stop_reason="tool_use"`
+### Deduplication Strategy Comparison
 
-ccusage reports 940K output tokens; actual is 5.6M. This is a 6x under-count.
+| Strategy | Output Tokens | Cost | Notes |
+|----------|---------------|------|-------|
+| FIRST (ccusage) | 971K | ~$1,674 | Takes `message_start` data |
+| LAST (our tool) | 5.27M | ~$1,748 | Takes cumulative `message_delta` data |
 
-Our tool correctly uses the LAST entry which has the final, accurate token count.
+### Why LAST is Correct
+
+Per [Anthropic's streaming docs](https://docs.anthropic.com/en/api/messages-streaming):
+> "The token counts shown in the usage field of the message_delta event are **cumulative**."
+
+Streaming flow:
+1. `message_start`: Initial message with `output_tokens: 1-5` (incomplete)
+2. Content streams...
+3. `message_delta`: Final event with cumulative `output_tokens` (correct total)
+
+### JSONL Entry Patterns
+
+Analysis of 31,313 unique messages:
+- **5,088** single-entry messages (no streaming variance)
+- **17,892** multi-entry with same first/last (no impact)
+- **8,294** multi-entry with different first/last (4.3M token diff)
+
+Sample message showing the issue:
+```
+[0] 2026-01-02T15:18:41 | out=3     | stop=null      (message_start)
+[1] 2026-01-02T15:18:41 | out=3     | stop=null      (streaming)
+[2] 2026-01-02T15:23:03 | out=19688 | stop=tool_use  (message_delta - CORRECT)
+```
+
+### Tiered Pricing Note
+
+Tiered pricing (2x rates above 200k tokens) should NOT be applied per-token-type.
+It applies to context window size, not individual token counts.
+
+Our tool uses simple per-million-token rates, matching ccusage's calculation method.
+
+### Cost Breakdown by Model (FIRST strategy to match ccusage)
+
+| Model | Messages | Cache Read | Cache Write | Total Cost |
+|-------|----------|------------|-------------|------------|
+| Opus 4.5 | 17,492 | 1.05B | 94M | $1,139 |
+| Sonnet 4.5 | 11,145 | 813M | 69M | $513 |
+| Haiku 4.5 | 2,591 | 76M | 11M | $22 |
+
+### Summary
+
+- **Our tool is MORE accurate** (+$74 vs ccusage due to correct output tokens)
+- ccusage under-reports because it uses incomplete `message_start` data
+- The ~4% difference represents real generated tokens that ccusage misses

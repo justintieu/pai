@@ -287,47 +287,42 @@ Action - Append to `## Explicit Feedback` section:
 | "add another sample" | Single sample import (streamlined wizard) |
 | "reset my voice" | Confirm intent, then clear samples/ directory |
 
-## Delegation Decision (Task-Type First)
+## Delegation Decision (Complexity-First)
 
-Delegate BEFORE starting work, based on task type — not complexity or context fullness.
+Delegate BEFORE starting work, based on task complexity — not when context is already heavy.
 
 **Why early delegation:**
 - Fresh 200k context per subagent beats cramped main context
 - Quality degrades at 50%+ context; don't wait until 70%+
 - Parallel subagents complete faster than sequential main-thread work
-- Task-type routing is more reliable than complexity estimation
 
 ### Delegation Matrix
 
-| Signal | Action |
-|--------|--------|
-| Code writing requested | ALWAYS delegate to implementation subagent |
-| File editing requested | ALWAYS delegate to implementation subagent |
-| "Find", "search", "where", "how does" | ALWAYS delegate to Explore agent |
-| 3+ files involved | ALWAYS delegate |
-| Error investigation | ALWAYS delegate to Explore agent |
-| Test running | ALWAYS delegate |
+| Task Complexity | Context Status | Action |
+|-----------------|----------------|--------|
+| Trivial (1 file, known location) | Any | Handle directly |
+| Simple (2-3 files, clear path) | <50% | Handle directly |
+| Simple (2-3 files, clear path) | 50%+ | Consider delegation |
+| Complex (4+ files) | Any | **Always delegate** |
+| Exploration needed | Any | **Always delegate** |
+| Multi-step research | Any | **Always delegate** |
 
 ### Always Delegate When
 
-- ANY code writing (no exceptions for "quick" changes)
-- ANY file editing (including docs, config, yaml)
+- About to read 3+ files
 - About to search with uncertain results
-- Research or exploration needed
 - User asks "where/how/what" about codebase
+- Task has 3+ independent steps
+- Research or exploration needed
 - Investigating an error
 - Understanding unfamiliar code
 
 ### Never Delegate When
 
-- Reading frontmatter/index for routing decisions
-- Parsing subagent manifests
+- Single file edit at known location
+- User's explicit inline command
 - Synthesizing after agents return
-- Quick PAI reads via CLI (read-only)
-
-### Prompt Templates
-
-For subagent prompt templates, see `protocols/subagent-prompts/`
+- Quick PAI reads via CLI
 
 ### Showing Delegation
 

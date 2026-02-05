@@ -1,0 +1,21 @@
+id: 2026-02-02_settings-page.tsx
+title: Work on settings-page.tsx
+created_at: "2026-02-02T21:47:06-08:00"
+completed_at: "2026-02-02T22:47:35-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: 54d4f456-4c4b-4606-ad22-e37627553ff0
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-filters.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src-tauri/src/claude.rs
+    - /Users/justintieu/Documents/github/kobo/src/components/project/welcome-screen.tsx
+    - /Users/justintieu/Documents/github/kobo/src/App.tsx
+    - /Users/justintieu/Documents/github/kobo/.claude/working-memory.md
+    - /Users/justintieu/Documents/github/kobo/src/components/settings/settings-dialog.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/settings/settings-page.tsx
+  agents_spawned: []

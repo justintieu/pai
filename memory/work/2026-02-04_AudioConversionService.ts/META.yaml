@@ -1,0 +1,15 @@
+id: 2026-02-04_AudioConversionService.ts
+title: Work on AudioConversionService.ts
+created_at: "2026-02-04T15:13:44-08:00"
+completed_at: "2026-02-04T15:29:41-08:00"
+source: PRE_TOOL_USE
+status: ACTIVE
+session_id: e7890081-7967-49a5-9b66-0ef26937fdce
+lineage:
+  tools_used:
+    - Edit
+  files_changed:
+    - /Users/justintieu/Documents/github/provus-ai-assistant/provus-ai-web/server/src/presentation/routes/InternalEventRoutes.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/agent-framework/client-sdk/src/types.ts
+    - /Users/justintieu/Documents/github/provus-ai-assistant/provus-ai-web/server/src/infrastructure/services/AudioConversionService.ts
+  agents_spawned: []

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-03T21:53:37.598Z",
+  "session_id": "f0287f7e-7250-4cff-a0f2-b1b99ba7985e",
+  "title": "pai-usage-audit Skill Definition Update",
+  "significance": "major",
+  "change_type": "structure_change",
+  "changes": [
+    {
+      "tool": "Write",
+      "path": "skills/pai-usage-audit/SKILL.md",
+      "category": "skill",
+      "isPhilosophical": false,
+      "isStructural": true
+    }
+  ]
+}

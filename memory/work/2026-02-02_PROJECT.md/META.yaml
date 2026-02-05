@@ -1,0 +1,19 @@
+id: 2026-02-02_PROJECT.md
+title: Work on PROJECT.md
+created_at: "2026-02-02T21:32:15-08:00"
+completed_at: null
+source: PRE_TOOL_USE
+status: INACTIVE
+session_id: a140ceae-1fd8-4f78-92a7-d94d0f2152ed
+lineage:
+  tools_used:
+    - Edit
+    - Write
+  files_changed:
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-filters.tsx
+    - /Users/justintieu/Documents/github/kobo/src/components/session/session-sidebar.tsx
+    - /Users/justintieu/Documents/github/kobo/src-tauri/src/claude.rs
+    - /Users/justintieu/Documents/github/kobo/src/components/project/welcome-screen.tsx
+    - /Users/justintieu/Documents/github/kobo/src/App.tsx
+    - /Users/justintieu/Documents/github/kobo/.claude/working-memory.md
+  agents_spawned: []

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-03T09:52:26.546Z",
+  "session_id": "e5a330d0-474a-42b2-9e64-8a726070a58d",
+  "event_type": "block",
+  "tool": "Bash",
+  "category": "bash_command",
+  "target": "git add README.md install.sh && git commit -m \"$(cat <<'EOF'\ndocs: rewrite README with installation instructions\n\n- Add quick install via curl | bash\n- Add manual install and build from source options\n- Create install.sh script for macOS\nEOF\n)\"",
+  "reason": "Piping remote script to shell",
+  "action_taken": "Hard block - exit 2"
+}
